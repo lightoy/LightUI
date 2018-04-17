@@ -10,11 +10,7 @@
 	import com.lowoui_as.dialogs.Dialog;
 	import com.greensock.TweenLite;
 	import com.greensock.easing.*;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class WidgetController extends Sprite
 	{
 		public static var _container:Object;	

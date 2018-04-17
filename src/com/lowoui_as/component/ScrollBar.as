@@ -1,20 +1,14 @@
 package com.lowoui_as.component 
 {
+	import com.greensock.TweenLite;
+	import com.greensock.easing.*;
 	import com.lowoui_as.core.UIComponent;
 	import com.lowoui_as.events.DragBarEvent;
-	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
 	
-	import com.greensock.TweenLite;
-	import com.greensock.easing.*;
-	
 	[Event(name = "drag", type = "com.lowoui_as.events.DragBarEvent")]
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class ScrollBar extends UIComponent
 	{
 		private var thumbObj     :Object;
@@ -74,12 +68,9 @@ package com.lowoui_as.component
 			TweenLite.to(thumbObj, 0.3, { delay:0, y:_tarY, ease:Sine.easeOut } );
 		}
 		
-		/**public functions*/
 		public function set sWidth(value:uint) : void
 		{
 			w = value;
-			
-			//
 		}		
 		public function get sWidth() : uint
 		{
@@ -108,7 +99,6 @@ package com.lowoui_as.component
 			return h;
 		}
 		
-		
 		public function set position(n:Number) : void
 		{
 			if (n > 1)      { _position = 1; }
@@ -121,5 +111,4 @@ package com.lowoui_as.component
 			return _position;
 		}
 	}
-
 }

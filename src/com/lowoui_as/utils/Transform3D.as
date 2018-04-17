@@ -1,15 +1,9 @@
 package com.lowoui_as.utils 
 {
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class Transform3D 
 	{
-		
 		public function Transform3D() 
 		{
-			
 			if (_global.gfxPlayer != undefined) 
 			{ 
 				inventory.bg.gotoAndPlay("open");
@@ -65,9 +59,6 @@ package com.lowoui_as.utils
 				inventory._yrotation = rotX;
 				inventory._xrotation = -rotY;
 			}
-			
 		}
-		
 	}
-
 }

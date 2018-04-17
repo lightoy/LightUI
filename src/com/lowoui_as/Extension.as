@@ -3,10 +3,7 @@ package com.lowoui_as
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.utils.getDefinitionByName;
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class Extension 
 	{
 		public function Extension() { }

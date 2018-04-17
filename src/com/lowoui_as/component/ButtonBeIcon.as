@@ -2,10 +2,7 @@ package com.lowoui_as.component
 {
 	import com.lowoui_as.Extension;
 	import com.lowoui_as.events.ButtonEvent;
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class ButtonBeIcon extends Button
 	{
 		private var __icon:Object;
@@ -30,10 +27,10 @@ package com.lowoui_as.component
 		{
 			__icon.gotoAndPlay("movie_in");
 		}
-		/*private function onSelect(e:ButtonEvent):void 
-		{
-			if(this.selected){__icon.gotoAndPlay("movie_in");}
-			else             {__icon.gotoAndPlay("movie_out");}
-		}*/
+		// private function onSelect(e:ButtonEvent):void 
+		// {
+		// 	if(this.selected){__icon.gotoAndPlay("movie_in");}
+		// 	else             {__icon.gotoAndPlay("movie_out");}
+		// }
 	}
 }

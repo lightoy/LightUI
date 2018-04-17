@@ -4,10 +4,6 @@ package com.lowoui_as.animation
 	import flash.events.Event;
 	import flash.utils.getDefinitionByName;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class Particles extends MovieClip
 	{
 		/**

@@ -1,20 +1,17 @@
-package com.lowoui_as.utils 
+/*
+ *Create by Geordi 14th Feb 2008
+ *function DrawSector is drawing a sector in the flash by actionscript 3 
+*/
+
+package com.lowoui_as.utils
 {
 	import flash.display.MovieClip;
 	import flash.display.Shape;
 
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class DrawSector
 	{
 		public function DrawSector() 
 		{
-			/*
-			*Create by Geordi 14th Feb 2008
-			*function DrawSector is drawing a sector in the flash by actionscript 3 
-			*/
 			//var stag:Sprite=new Sprite();
 			//addChild(stag);
 			//var moviec:MovieClip=new MovieClip;
@@ -26,6 +23,7 @@ package com.lowoui_as.utils
 			*/
 			//DrawSector(moviec,200,200,100,S_angle,270,0xffcc00);
 		}
+		
 		/*
 		* mc the movieclip: the container of the sector.
 		* x,y the center position of the sector
@@ -35,6 +33,7 @@ package com.lowoui_as.utils
 		* it is counting from top in this example. 
 		* color the fil lin color of the sector
 		*/
+
 		/*
 		 * moviec是扇形所在影片剪辑的名字 should be shape
 		 * 第2，3个参数是扇形原点的横纵坐标
@@ -76,7 +75,3 @@ package com.lowoui_as.utils
 		}
 	}
 }
-
-
-
-

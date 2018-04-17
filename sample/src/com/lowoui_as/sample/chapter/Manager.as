@@ -6,10 +6,6 @@
 	import com.lowoui_as.core.UIMovie;
 	import flash.events.MouseEvent;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class Manager extends UIMovie
 	{
 		/**public variable*/

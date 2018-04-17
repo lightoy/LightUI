@@ -5,8 +5,6 @@ package com.lowoui_as.component
 {
 	public class InputDetails
 	{
-		// Constants:
-		// Public Properties:
 		public var type:String;
 		public var code:Number;
 		public var value:*;
@@ -16,8 +14,6 @@ package com.lowoui_as.component
 		public var altKey:Boolean;
 		public var shiftKey:Boolean
 		
-		// Private Properties:
-		// Initialization:
 		public function InputDetails(type:String, code:Number, value:*, navEquivalent:String = null, controllerIndex:uint = 0, ctrlKey:Boolean = false, altKey:Boolean = false, shiftKey:Boolean = false)
 		{
 			this.type = type;
@@ -30,11 +26,9 @@ package com.lowoui_as.component
 			this.shiftKey = shiftKey;
 		}
 		
-		// Public Methods:
 		public function toString():String
 		{
 			return "[InputDetails code=" + code + ", type=" + type + " value=" + value + ", navEquivalent=" + navEquivalent + ", controllerIndex=" + controllerIndex + ", ctrlKey=" + ctrlKey + ", altKey=" + altKey + ", shiftKey=" + shiftKey + "]";
 		}
-		// Private Methods:
 	}
 }

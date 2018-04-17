@@ -1,15 +1,9 @@
 package com.lowoui_as.dialogs 
 {
 	import com.lowoui_as.dialogs.Dialog;
-	import flash.events.MouseEvent;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class YesNoDialog extends Dialog
 	{
-		
 		public function YesNoDialog() 
 		{
 			super(0, 0, 0, 0, 1, 1);

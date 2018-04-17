@@ -10,10 +10,6 @@ package com.lowoui_as.component
 	import com.lowoui_as.dialogs.YesNoDialog;
 	import com.lowoui_as.dialogs.NoticeDialog;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class LoaderSWF extends MovieClip
 	{
 		private var loader:Loader;

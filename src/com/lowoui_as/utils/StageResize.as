@@ -1,9 +1,5 @@
 package com.lowoui_as.utils 
 {
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class StageResize
 	{
 		public static var stageWidth:uint = 0;

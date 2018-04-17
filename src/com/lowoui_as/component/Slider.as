@@ -3,11 +3,7 @@ package com.lowoui_as.component
 	import com.lowoui_as.core.UIComponent;
 	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class Slider extends UIComponent
 	{
 		//private var cName:TextField;

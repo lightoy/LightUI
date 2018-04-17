@@ -1,25 +1,14 @@
 package com.lowoui_as.events
 {
 	import flash.events.Event;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class ResizeEvent extends Event
 	{
-		
-		// Constants:
 		public static const RESIZE:String = "resize";
 		public static const SCOPE_ORIGINALS_UPDATE:String = "scopeOriginalsUpdate";
-		
-		// Public Properties:
 		public var scaleX:Number = 1;
 		public var scaleY:Number = 1;
 		
-		// Protected Properties:
-		
-		// Initialization:
 		public function ResizeEvent(type:String, scaleX:Number, scaleY:Number)
 		{
 			super(type, false, false);
@@ -27,9 +16,6 @@ package com.lowoui_as.events
 			this.scaleY = scaleY;
 		}
 		
-		// Public getter / setters:
-		
-		// Public Methods:
 		override public function toString():String
 		{
 			return formatToString("ResizeEvent", "type", "scaleX", "scaleY");
@@ -39,7 +25,5 @@ package com.lowoui_as.events
 		{
 			return new ResizeEvent(type, scaleX, scaleY);
 		}
-	
-		// Protected Methods:
 	}
 }

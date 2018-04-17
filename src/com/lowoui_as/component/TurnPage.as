@@ -4,11 +4,7 @@
 	//import com.business.Global;
 	//import com.business.config.Lang;
 
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
-	class TurnPage extends MovieClip
+	public class TurnPage extends MovieClip
 	{
 		public var totalPages:Number;
 		public var currentPage:Number;
@@ -86,7 +82,6 @@
 			}
 		}
 		
-		//public functions
 		public function initializePages($currentPage:Number, $totalPages:Number)
 		{
 			_this.currentPage = $currentPage;
@@ -99,7 +94,6 @@
 		}
 		public function updateContainerList()
 		{
-			//
 		}
 	}
 }

@@ -1,18 +1,12 @@
 package com.lowoui_as.component 
 {
-	/** events */
 	import com.lowoui_as.events.ButtonEvent;
 	import com.lowoui_as.evcom.lowoui_as.events.ButtonEventt flash.events.Event;
-	
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	
 	[Event(name = "buttonSelect", type = "com.lowoui_as.events.ButtonGroupEvent")]
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class ButtonGroup extends Sprite
 	{
 		private var btnArr:Array;
@@ -62,7 +56,6 @@ package com.lowoui_as.component
 			selectItem(btnArr[selectIdx]);
 		}
 		
-		/**public functions*/
 		public function addButton(arr:Object):void
 		{
 			btnArr = [];

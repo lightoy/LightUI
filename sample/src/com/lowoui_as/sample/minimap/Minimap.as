@@ -5,10 +5,6 @@
 	import com.lowoui_as.core.UIMovie;
 	import flash.geom.Point;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class Minimap extends UIMovie
 	{
 		public static var viewName:String = "Minimap";

@@ -4,22 +4,12 @@
 	
 	public class WeakRefDictionary
 	{
-		// Constants:
-		
-		// Public Properties:
-		
-		// Protected Properties:
 		protected var _dictionary:Dictionary;
 		
-		// Initialization:
 		public function WeakRefDictionary()
 		{
 			_dictionary = new Dictionary(true); // Create a weak ref dictionary.    
 		}
-		
-		// Public Getter / Setters:
-		
-		// Public Methods:
 		
 		// Value will be stored weak-ref. This means it will actualy be used as the key internally.
 		public function setValue(key:Object, value:Object):void
@@ -48,7 +38,5 @@
 			}
 			return null;
 		}
-		
-		// Protected Methods:
 	}
 }

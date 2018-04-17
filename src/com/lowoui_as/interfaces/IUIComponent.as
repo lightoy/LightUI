@@ -6,10 +6,6 @@
 	import flash.events.IEventDispatcher;
 	import flash.geom.Rectangle;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public interface IUIComponent extends IEventDispatcher
 	{
 		// Public Getter / Setters:

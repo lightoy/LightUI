@@ -1,12 +1,7 @@
 ﻿package com.lowoui_as.sample.config 
 {
-	import com.lowoui_as.sample.Global;
 	//import scaleform.gfx.Extensions;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class AssetPath
 	{
 		//image

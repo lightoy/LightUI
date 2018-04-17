@@ -1,9 +1,5 @@
 ﻿package com.lowoui_as.sample 
 {
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class Global
 	{
 		public static var manager:Object;

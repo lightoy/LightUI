@@ -3,10 +3,6 @@ package com.lowoui_as.animation
 	import flash.display.MovieClip;
 	import flash.events.Event;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class ParticleObj extends MovieClip
 	{
 		public var k:Number;

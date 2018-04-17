@@ -14,10 +14,6 @@
 	
 	[Event(name = "itemClick", type = "com.lowoui_as.events.ListEvent")]
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class ListConSimple extends UIComponent
 	{
 		protected var _dispatchInfo:*;
@@ -100,7 +96,6 @@
 			container.y = 0;
 		}
 		
-		//**public functions*/
 		public function getWidth() : uint        { return w; }
 		public function getHeight(): uint        { return h; }
 		public function get dispatchInfo():Array { return _dispatchInfo; }

@@ -3,10 +3,6 @@ package com.lowoui_as.utils
 	import com.lowoui_as.core.UI;
 	import flash.external.ExternalInterface;
 
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class PlaySound
 	{
 		public static var sounder:PlaySound = new PlaySound();

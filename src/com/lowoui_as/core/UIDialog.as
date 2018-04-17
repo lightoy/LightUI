@@ -9,10 +9,6 @@
 	import flash.external.ExternalInterface;
 	//import scaleform.gfx.Extensions;
 
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class UIDialog  extends UIMovie
 	{
 		public static var dialogTitle:String        = "Dialog";
@@ -121,10 +117,7 @@
 			//play stage movie
 			WidgetController.inactiveWidgetView();
 		}
-		
-		/**
-		 * public functions
-		 */
+
 		public function openAndUpdate()
 		{
 			openDialog();

@@ -3,11 +3,7 @@ package com.lowoui_as.dialogs
 	import com.lowoui_as.dialogs.Dialog;
 	import com.greensock.TweenLite;
 	import fl.motion.easing.*;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class NoticeDialog extends Dialog
 	{
 		

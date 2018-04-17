@@ -2,11 +2,7 @@ package com.lowoui_as.utils
 {
 	import flash.display.FrameLabel;
 	import flash.display.MovieClip;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class FrameByLable extends MovieClip
 	{
 		

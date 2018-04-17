@@ -6,10 +6,6 @@ package com.lowoui_as.component
 	//import flash.events.Event;
 	//import com.business.constants.Hud;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class LoaderIMG extends Sprite
 	{
 		private var loader:Loader;

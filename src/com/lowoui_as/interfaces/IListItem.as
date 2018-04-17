@@ -1,9 +1,5 @@
 package com.lowoui_as.interfaces 
 {
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public interface IListItem
 	{
 		function setData(itemObj:Object,arr:Array):void

@@ -1,11 +1,7 @@
 ﻿package com.lowoui_as.events 
 {
 	import flash.events.Event;
-
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+	
 	public class MovieEvent extends Event
 	{
 		// Constants:
@@ -25,5 +21,4 @@
             super(type, bubbles, cancelable);
         }
 	}
-
 }

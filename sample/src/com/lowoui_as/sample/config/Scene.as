@@ -1,9 +1,5 @@
 ﻿package com.lowoui_as.sample.config 
 {	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class Scene 
 	{
 		//scene

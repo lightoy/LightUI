@@ -6,11 +6,7 @@
 	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
 	import flash.text.TextField;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class TextInput extends UIComponent
 	{
 		public var textType:String;
@@ -85,10 +81,7 @@
 			}
         }
 		
-		
-		
 		/**
-		 * public functions
 		 * ---------------------------------------
 		 *     set this component's parameters
 		 * ---------------------------------------
@@ -136,7 +129,6 @@
 			iBg.width = wid;
 			iBg.hei   = hei;
 			
-			//
 			//tt.width    = wid;
 			//tt.fontSize = hei-2;
 		}
@@ -174,6 +166,4 @@
 				iBg.gotoAndStop("defocus"); 
 			}
 		}
-		
-	}
 }

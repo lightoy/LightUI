@@ -3,10 +3,6 @@ package com.lowoui_as.bg
 	import com.lowoui_as.core.UIMovie;
 	import com.lowoui_as.animation.Particles;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class BgView extends UIMovie
 	{
 		

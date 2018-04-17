@@ -8,13 +8,8 @@
 	import flash.events.MouseEvent;
 	import com.greensock.TweenLite;
 	import com.greensock.easing.*;
-	
 	//import scaleform.gfx.Extensions;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class Dialog  extends UIMovie
 	{
 		public static var dialogTitle:String        = "Dialog";
@@ -124,9 +119,6 @@
 			WidgetController.inactiveWidgetView();
 		}
 		
-		/**
-		 * public functions
-		 */
 		public function openAndUpdate()
 		{
 			openDialog();

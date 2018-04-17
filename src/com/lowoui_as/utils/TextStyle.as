@@ -2,18 +2,13 @@
 {	
 	import flash.text.TextField;
 	import flash.text.TextFormat;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class TextStyle extends TextField
 	{
 		private static var tf:TextFormat;
 		
 		public function TextStyle() 
 		{
-			//
 		}
 		
 		public static function setColorYellow(tt:TextField):void

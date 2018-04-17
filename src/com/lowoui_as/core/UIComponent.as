@@ -6,10 +6,6 @@ package com.lowoui_as.core
 	import flash.events.Event;
 	import flash.text.TextField;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class UIComponent extends MovieClip
 	{
 		protected var thisWidth:Number;
@@ -33,12 +29,6 @@ package com.lowoui_as.core
 		}
 		protected function initialize(){}
 		
-		
-		/**
-		 * ************************************
-		 *          public functions
-		 * ************************************
-		 */
 		public function setName(str:String) : void
 		{
 		}
@@ -52,5 +42,4 @@ package com.lowoui_as.core
 		{
 		}
 	}
-
 }

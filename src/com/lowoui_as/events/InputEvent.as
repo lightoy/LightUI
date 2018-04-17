@@ -2,23 +2,12 @@ package com.lowoui_as.events
 {
 	import com.lowoui_as.component.InputDetails;
 	import flash.events.Event;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class InputEvent extends Event
 	{
-		
-		// Constants:
 		public static const INPUT:String = "input";
-		
-		// Public Properties:
 		public var details:InputDetails;
-		
-		// Protected Properties:
-		
-		// Initialization:
+
 		public function InputEvent(type:String, details:InputDetails)
 		{
 			super(type, true, true);
@@ -40,7 +29,6 @@ package com.lowoui_as.events
 			}
 		}
 		
-		// Public Methods:	
 		override public function clone():Event
 		{
 			return new InputEvent(type, details);

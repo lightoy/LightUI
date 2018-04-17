@@ -6,10 +6,6 @@ package com.lowoui_as.sample.chapter
 	import com.lowoui_as.Extension;
 	import flash.events.MouseEvent;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class ChapterDetailCon extends UIMovie
 	{
 		private var __btnConfirm:Object;
@@ -63,5 +59,4 @@ package com.lowoui_as.sample.chapter
 			this["root"].isOpenCharpterDetail = false;
 		}
 	}
-
 }

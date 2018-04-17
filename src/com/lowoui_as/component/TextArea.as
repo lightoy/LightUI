@@ -6,10 +6,7 @@
 	import flash.events.FocusEvent;
 	import flash.events.MouseEvent;
 	import flash.text.TextField;
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class TextArea extends UIComponent
 	{
 		private var textObj      :TextField;
@@ -20,7 +17,6 @@
 		private var w            :uint;
 		private var h            :uint;
 		
-	// Protected Properties:
         protected var _scrollPolicy:String = "auto";
         // The current scroll position of the TextArea.
         protected var _position:int = 1;
@@ -93,9 +89,6 @@
             textObj.scrollV = Math.round(indicator.position * (textObj.maxScrollV-1))+1;
 		}
 		
-		
-		
-		/**public functions*/
 		public function set tWidth(value:uint) : void
 		{
 			w = value;
@@ -104,7 +97,8 @@
 			focusObj.width = w;
 			bgObj.width    = w;
 			indicator.x    = w + 2;
-		}		
+		}
+
 		public function get tWidth() : uint
 		{
 			return w;
@@ -170,5 +164,4 @@
             if (textObj != null) { textObj.displayAsPassword = value; }
         }
 	}
-
 }

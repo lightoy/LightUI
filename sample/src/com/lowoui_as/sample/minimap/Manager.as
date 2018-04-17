@@ -2,10 +2,6 @@ package com.lowoui_as.sample.minimap
 {
 	import com.lowoui_as.core.UIMovie;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class Manager extends UIMovie
 	{
 		private var __minimap:Object;
@@ -21,7 +17,6 @@ package com.lowoui_as.sample.minimap
 			__minimap = this["minimapCon"];
 		}
 		
-		/**public functions*/
 		public function SetMinimapInfo(name:String)
 		{
 			__minimap.setMinimapInfo(name);
@@ -43,8 +38,6 @@ package com.lowoui_as.sample.minimap
 			__minimap.setMinimapEnemies(minimapEnemiesArr);
 		}
 		
-		
-		/**inherit functions*/
 		override protected function movieIn()
 		{
 			//super.movieIn();

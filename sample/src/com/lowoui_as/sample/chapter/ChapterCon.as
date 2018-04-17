@@ -9,10 +9,6 @@
 	import flash.events.MouseEvent;
 	import flash.text.TextField;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class ChapterCon extends UIMovie
 	{
 		private var charpterIndicatorArr:Vector.<Object>;

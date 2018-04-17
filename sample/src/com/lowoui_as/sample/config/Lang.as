@@ -3,10 +3,6 @@ package com.lowoui_as.sample.config
 	//import com.business.lang.ZH_CN;
 	//import com.business.lang.EN_US;
 
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class Lang 
 	{
 		/**

@@ -4,7 +4,6 @@
 	import com.lowoui_as.core.UIComponent;
 	import com.lowoui_as.events.ButtonEvent;
 	import com.lowoui_as.utils.PlaySound;
-	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
@@ -15,11 +14,7 @@
 	[Event(name = "releaseOutside", type = "com.lowoui_as.events.ButtonEvent")]
 	[Event(name = "buttonClick", type = "com.lowoui_as.events.ButtonEvent")]
 	[Event(name = "select", type = "com.lowoui_as.events.ButtonEvent")]
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class Button extends UIComponent
 	{
 		private const bNameMarginU:int = 4;
@@ -135,8 +130,6 @@
 			__bBg.mouseEnabled = false;
 		}
 		
-		
-		/**inherit functions*/
 		override public function setName(str:String):void 
 		{
 			__bName.htmlText = str;
@@ -155,8 +148,6 @@
 			__bName.y = (hei - __bName.height) / 2;
 		}
 		
-		
-		/**public functions*/
 		public function setActiveStatus(bool:Boolean):void
 		{
 			this.mouseChildren = bool;

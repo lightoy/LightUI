@@ -2,10 +2,6 @@
 {
 	import flash.filters.ColorMatrixFilter;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class ColorFilter 
 	{
 		private static var _nRed : Number = 0.3086;

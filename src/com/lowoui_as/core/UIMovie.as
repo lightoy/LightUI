@@ -15,17 +15,9 @@
 	
 	[Event(name = "movieIn", type = "com.lowoui_as.events.MovieEvent")]
 	[Event(name = "movieOut", type = "com.lowoui_as.events.MovieEvent")]
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class UIMovie extends MovieClip
 	{
-		//constants:
-		
-		//public Properties:
-		
 		protected var sceneManager    : WidgetController;
 		protected var thisWidth       : Number;
 		protected var thisHeight      : Number;
@@ -42,7 +34,6 @@
 		public var isActiveState      : Boolean;
 		protected var stagePressed    : Boolean;
 		
-		//private Properties:
 		private var blurValue         : Number;
         private var posInfo           : Object;
 		//3DTransform
@@ -328,7 +319,6 @@
 		private function setInactiveState()
 		{
 			//trace(":::::::::::::" + "beBlurFilter:" + beBlurFilter + "/" + "beScale:" + beScale);
-			
 			var _z:int;
 			if (!beScale)         { _z = 0; }
 			else
@@ -441,11 +431,9 @@
 			stageDrag(false);
 		}
 
-		//
 		////////////////////////////////////////////////////////////////////////////
 		// 3D Transformation code
 		////////////////////////////////////////////////////////////////////////////
-		//
 		private function calcRotations():void 
 		{
 			var rotX:Number = orx + ((root.mouseX- ox) / 1024) * 90;

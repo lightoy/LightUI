@@ -11,10 +11,6 @@
 	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class Manager extends Sprite
 	{
 		private var loadSceneWidget:WidgetController;
@@ -305,9 +301,6 @@
 			isGameOptionShow = false;
 		}
 		
-		
-		
-		/**public functions*/
 		public function setToTheHighestDepth(objName:String):void
 		{
 			var _con:Object = WidgetController._container;

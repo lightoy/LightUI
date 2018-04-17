@@ -1,21 +1,11 @@
 package com.lowoui_as.controller 
 {
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class BasicController
 	{
-		protected var _target:*;//gameObject
+		protected var _target:*;
 		
-		public function BasicController() 
-		{
-			//
-		}
+		public function BasicController()  { }
 		
-		/**
-		 * set control target object
-		 */
 		public function set target(obj:gameObject):void
 		{
 			_target = obj

@@ -3,10 +3,6 @@ package com.lowoui_as.utils
 	import flash.filters.BitmapFilterQuality;
 	import flash.filters.BlurFilter;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class Filters 
 	{
 		

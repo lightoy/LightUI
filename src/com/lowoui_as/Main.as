@@ -3,13 +3,8 @@ package com.lowoui_as
 	import flash.display.Sprite;
 	import flash.events.Event;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class Main extends Sprite 
 	{
-		
 		public function Main():void 
 		{
 			if (stage) init();

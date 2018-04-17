@@ -9,11 +9,7 @@ package com.lowoui_as.component
 	import flash.utils.getDefinitionByName;
 	
 	[Event(name = "select", type = "com.lowoui_as.events.DropMenuEvent")]
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class DropdownMenu extends UIComponent
 	{
 		private var _value    :String;
@@ -79,7 +75,6 @@ package com.lowoui_as.component
 			{ _obj.visible = isOpenList; }
 		}
 		
-		/**public functions*/
 		public function set data(arr:Array) : void
 		{
 			dataArr = arr;
@@ -99,5 +94,4 @@ package com.lowoui_as.component
 			return _value;
 		}
 	}
-
 }

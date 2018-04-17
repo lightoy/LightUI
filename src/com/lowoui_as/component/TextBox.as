@@ -3,11 +3,7 @@ package com.lowoui_as.component
 	import flash.display.Sprite;
 	import flash.text.TextField;
 	import flash.text.TextFormat;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class TextBox extends Sprite
 	{
 		private var tf:TextFormat;
@@ -19,7 +15,6 @@ package com.lowoui_as.component
 			__tt = this["tt"];
 		}
 		
-		/**public functions*/
 		public function setText(str:String):void
 		{
 			__tt.htmlText = str;
@@ -32,5 +27,4 @@ package com.lowoui_as.component
 			__tt.setTextFormat(tf);
 		}
 	}
-
 }

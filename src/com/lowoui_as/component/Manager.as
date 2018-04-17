@@ -9,11 +9,7 @@ package com.lowoui_as.component
 	import flash.utils.getDefinitionByName;
 	
 	//import scaleform.gfx.Extensions;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class Manager extends MovieClip
 	{
 		private	var _Button:Object;;

@@ -6,10 +6,6 @@
 	import flash.display.MovieClip;
 	import flash.geom.Point;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class Tooltip extends MovieClip
 	{
 		public function ToolTip()

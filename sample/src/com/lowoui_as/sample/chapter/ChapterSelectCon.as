@@ -6,10 +6,6 @@ package com.lowoui_as.sample.chapter
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class ChapterSelectCon extends MovieClip
 	{
 		private var charptersArr:Vector.<DisplayObjectContainer>;
@@ -86,7 +82,6 @@ package com.lowoui_as.sample.chapter
 			__charpterDetailCon.openView();
 		}
 		
-		/**public functions*/
 		public function updatePos(moveX:Number):void 
 		{
 			for each (var obj:Object in charptersArr) 

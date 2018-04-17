@@ -5,10 +5,6 @@ package com.lowoui_as.core
 	import flash.display.MovieClip;
 	import flash.geom.Point;
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class UITooltip extends MovieClip
 	{
 		public function UIToolTip()

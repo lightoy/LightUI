@@ -16,19 +16,13 @@
 	import com.greensock.easing.*;
 	
 	[Event(name = "itemClick", type = "com.lowoui_as.events.ListEvent")]
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class ListCon extends UIComponent
 	{
 		protected var _dispatchInfo:*;
 		protected var _btnTypeGroup:ButtonGroup;
 		
-		//array of item containers
 		private var missionArr:Vector.<DisplayObjectContainer>;
-		//array of item data
 		private var dataArr:Array;
 		
 		//list style
@@ -104,7 +98,6 @@
 			container.y = 0;
 		}
 		
-		//**public functions*/
 		public function getWidth() : uint        { return w; }
 		public function getHeight(): uint        { return h; }
 		public function get itemGroup(): ButtonGroup   { return _btnTypeGroup; }
@@ -190,5 +183,4 @@
 		}
 		//private function setData(itemObj:Object,arr:Array):void{}
 	}
-
 }

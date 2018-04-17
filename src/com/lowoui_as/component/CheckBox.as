@@ -11,13 +11,8 @@
 	//[Event(name = "buttonOver", type = "com.lowoui_as.events.ButtonEvent")]
 	//[Event(name = "buttonOut", type = "com.lowoui_as.events.ButtonEvent")]
 	//[Event(name = "releaseOutside", type = "com.lowoui_as.events.ButtonEvent")]
-	//[Event(name = "buttonClick", type = "com.lowoui_as.events.ButtonEvent")]
 	[Event(name = "select", type = "com.lowoui_as.events.ButtonEvent")]
 	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
 	public class CheckBox extends UIComponent
 	{		
 		private var cName:TextField;
@@ -35,6 +30,7 @@
 			cBg.addEventListener(MouseEvent.MOUSE_OVER, onBtn);
 			cBg.addEventListener(MouseEvent.MOUSE_DOWN, onBtn);
 		}
+
 		private function onBtn(e:MouseEvent):void 
 		{
 			switch (e.type) 
@@ -84,7 +80,6 @@
 					else 
 					{
 						//dispatchEvent(new ButtonEvent(ButtonEvent.RELEASE_OUTSIDE));
-						
 						if (selectedState) { cBg.gotoAndStop("selected_up"); }
 						else               { cBg.gotoAndStop("up"); }
 					}
@@ -95,8 +90,6 @@
 			}
 		}
 		
-		
-		/**public functions*/
 		public function get selected():Boolean
 		{
 			return selectedState;
@@ -131,8 +124,6 @@
 			}
 		}
 		
-		
-		/**inherit functions*/
 		override public function setName(str:String) : void
 		{
 			cName.text  = str;
@@ -152,5 +143,4 @@
 			}
 		}
 	}
-
 }

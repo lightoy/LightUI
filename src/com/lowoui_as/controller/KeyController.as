@@ -3,11 +3,7 @@ package com.lowoui_as.controller {
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 	import flash.display.Stage;
-	
-	/**
-	 * ...
-	 * @author www.loywong.com
-	 */
+
 	public class KeyController extends Sprite
 	{
 		public static const ENTER:String = "ENTER";
