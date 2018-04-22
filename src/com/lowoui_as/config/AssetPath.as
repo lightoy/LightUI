@@ -1,4 +1,4 @@
-﻿package com.lowoui_as.sample.config 
+﻿package com.lowoui_as.config 
 {
 	//import scaleform.gfx.Extensions;
 

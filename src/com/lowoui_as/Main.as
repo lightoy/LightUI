@@ -1,13 +1,29 @@
 package com.lowoui_as 
 {
 	import flash.display.Sprite;
+	import flash.display.StageScaleMode;
+	import flash.display.StageAlign;
 	import flash.events.Event;
+	import flash.events.KeyboardEvent;
+	import flash.events.MouseEvent;
+	
+	import com.lowoui_as.controller.WidgetController;
 	
 	public class Main extends Sprite 
 	{
-		public function Main():void 
+		protected var widgetController:WidgetController;
+		//protected var keyboardEvents:KeyController;
+		
+		//cunstom
+		//protected var __cursor:Cursor_con;
+		
+		public function Main()
 		{
 			Global.manager = this;
+			
+			/**Extensions of scaleform GFx*/
+			//Extensions.enabled = true;
+			//Extensions.noInvisibleAdvance = true;
 			
 			if (stage) init();
 			else addEventListener(Event.ADDED_TO_STAGE, init);
@@ -53,5 +69,80 @@ package com.lowoui_as
 				//e.updateAfterEvent();
 			}
 		}*/
+		
+		private function fKeyUp(e:KeyboardEvent):void
+		{
+			//if (Global.hudManager != null)
+				//Global.hudManager.playerMoveStatus(false);
+			
+			Global.isAltKeyPressed = false;
+		}
+		private function fKeyDown(e:KeyboardEvent):void
+		{
+			/*switch (e.keyCode)
+			{
+				case Keyboard.ESCAPE:
+					onPressESC();
+					break;
+				case Keyboard.ENTER:
+					OpenChatPanel();
+					break;
+				case Keyboard.ALTERNATE:
+					if (Global.hudManager != null&&!Global.isAltKeyPressed) Global.hudManager.showAltItemsCon();
+					Global.isAltKeyPressed = true;
+					break;
+				case Keyboard.TAB:
+					if (Global.currMenuSelect == null)
+					{ Global.currMenuSelect = SceneWidget.w_LevelMap; }
+					openTabPanel(Global.currMenuSelect);
+					break;
+				case Keyboard.B:
+					openTabPanel(SceneWidget.w_Bag);
+					break;
+				case Keyboard.N://Conflict with screen drag event when refer to C.
+					openTabPanel(SceneWidget.w_Character);
+					break;
+				case Keyboard.M:
+					openTabPanel(SceneWidget.w_LevelMap);
+					break;
+				case Keyboard.J:
+					openTabPanel(SceneWidget.w_MissionOwned);
+					break;
+				case Keyboard.K:
+					openTabPanel(SceneWidget.w_Skills);
+					break;
+				case Keyboard.W: 
+				case Keyboard.A: 
+				case Keyboard.S: 
+				case Keyboard.D: 
+					if (Global.hudManager != null) Global.hudManager.playerMoveStatus(true);
+					break;
+				case Keyboard.Q: 
+					break;
+				case Keyboard.NUMBER_1: 
+					break;
+				case Keyboard.NUMBER_2: 
+					break;
+				case Keyboard.NUMBER_3: 
+					break;
+				case Keyboard.NUMBER_4: 
+					break;
+				case Keyboard.F5: 
+					break;
+				case Keyboard.F6: 
+					break;
+				default: 
+			}*/
+		}
+		
+		private function onPressESC():void 
+		{
+			//if (Global.isTabPanelShow) {
+				//loadSceneWidget.CloseWidget(SceneWidget.w_TABPanel);
+			//}
+			//else {
+				//toggleGameOptionPanel();
+			//}
+		}
 	}
 }

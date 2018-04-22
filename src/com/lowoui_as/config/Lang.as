@@ -1,4 +1,4 @@
-package com.lowoui_as.sample.config 
+package com.lowoui_as.config 
 {
 	//import com.business.lang.ZH_CN;
 	//import com.business.lang.EN_US;

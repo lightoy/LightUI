@@ -1,8 +1,8 @@
 package com.lowoui_as.feature 
 {
-	import com.lowoui_as.core.Dialog;
+	import com.lowoui_as.core.UIDialog;
 
-	public class YesNoDialog extends Dialog
+	public class YesNoDialog extends UIDialog
 	{
 		public function YesNoDialog() 
 		{

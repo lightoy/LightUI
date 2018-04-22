@@ -1,13 +1,13 @@
 ﻿package com.lowoui_as.core 
 {	
-	import com.lowoui_as.Extension;
-	import com.lowoui_as.core.UIMovie;
-	import com.lowoui_as.controller.WidgetController;
-	import flash.display.MovieClip;
-	import flash.external.ExternalInterface;
-	import flash.events.MouseEvent;
 	import com.greensock.TweenLite;
 	import com.greensock.easing.*;
+	import com.lowoui_as.Extension;
+	import com.lowoui_as.controller.WidgetController;
+	import com.lowoui_as.core.UIMovie;
+	import flash.display.MovieClip;
+	import flash.events.MouseEvent;
+	import flash.external.ExternalInterface;
 	//import scaleform.gfx.Extensions;
 
 	public class Dialog  extends UIMovie

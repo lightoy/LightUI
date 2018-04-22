@@ -3,10 +3,10 @@
 	import com.greensock.easing.*;
 	import com.lowoui_as.Global;
 	import com.lowoui_as.component.LoaderSWF;
-	import com.lowoui_as.core.Dialog;
+	import com.lowoui_as.core.UIDialog;
 	
-	import com.lowoui_as.sample.config.AssetPath;
-	import com.lowoui_as.sample.config.Scene;
+	import com.lowoui_as.config.AssetPath;
+	import com.lowoui_as.config.Scene;
 	
 	import flash.display.Sprite;
 	import flash.display.MovieClip;
@@ -142,33 +142,33 @@
 		 */
 		public function OpenDialogYesNo(title:String, info:String, yesCallFun:String, noCallFun:String) : void
 		{
-			Dialog.dialogTitle     = title;
-			Dialog.dialogInfo      = info;
-			Dialog.dialogBtnYesFun = yesCallFun;
-			Dialog.dialogBtnNoFun  = noCallFun;
+			UIDialog.dialogTitle     = title;
+			UIDialog.dialogInfo      = info;
+			UIDialog.dialogBtnYesFun = yesCallFun;
+			UIDialog.dialogBtnNoFun  = noCallFun;
 			
 			openDialogToStage(yesnoDialog,"YesNoDialog");
 		}
 		public function OpenDialogYes(title:String, info:String, yesCallFun:String) : void
 		{
 			trace("yesCallFun:"+yesCallFun);
-			Dialog.dialogTitle     = title;
-			Dialog.dialogInfo      = info;
-			Dialog.dialogBtnYesFun = yesCallFun;
+			UIDialog.dialogTitle     = title;
+			UIDialog.dialogInfo      = info;
+			UIDialog.dialogBtnYesFun = yesCallFun;
 			
 			openDialogToStage(yesDialog,"YesDialog");
 		}
 		public function OpenDialogNotice(title:String, info:String, time:Number) : void
 		{
-			Dialog.dialogTitle        = title;
-			Dialog.dialogInfo         = info;
-			Dialog.dialogDurationTime = time;
+			UIDialog.dialogTitle        = title;
+			UIDialog.dialogInfo         = info;
+			UIDialog.dialogDurationTime = time;
 			
 			openDialogToStage(noticeDialog, "NoticeDialog");
 		}
 		public function CloseDialog(dialogName:String) : void
 		{
-			var dialog:Object;
+			var dialog:Object = null;
 			
 			switch (dialogName) 
 			{
@@ -184,7 +184,8 @@
 				default:
 			}
 			
-			dialog.closeDialog();
+			if(dialog != null)
+				dialog.closeDialog();
 		}
 		private function openDialogToStage(dialogLoader:LoaderSWF, dialogLoaderName:String) : void 
 		{

@@ -1,10 +1,10 @@
 package com.lowoui_as.feature 
 {
-	import com.lowoui_as.core.Dialog;
+	import com.lowoui_as.core.UIDialog;
 	import com.greensock.TweenLite;
 	import fl.motion.easing.*;
 
-	public class NoticeDialog extends Dialog
+	public class NoticeDialog extends UIDialog
 	{
 		public function NoticeDialog() 
 		{

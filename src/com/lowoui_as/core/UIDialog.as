@@ -1,7 +1,8 @@
 ﻿package com.lowoui_as.core
 {
-	import com.greensock.easing.*;
 	import com.greensock.TweenLite;
+	import com.greensock.easing.*;
+	import com.lowoui_as.Extension;
 	import com.lowoui_as.controller.WidgetController;
 	import com.lowoui_as.core.UIMovie;
 	import flash.display.MovieClip;

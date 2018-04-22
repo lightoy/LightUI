@@ -1,4 +1,4 @@
-﻿package com.lowoui_as.sample.config 
+﻿package com.lowoui_as.config 
 {	
 	public class Scene 
 	{
@@ -19,6 +19,6 @@
 		 */
 		
 		//scene default widgets to load 
-		public static var scene_Demo:Array            = [[ConfigWidget.w_Minimap,0],[ConfigWidget.w_Chapter, 1]];
+		public static var scene_Demo:Array            = [["Minimap",0],["Chapter", 1]];
 	}
 }
