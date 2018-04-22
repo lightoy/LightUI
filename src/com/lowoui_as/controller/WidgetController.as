@@ -1,33 +1,32 @@
 ﻿package com.lowoui_as.controller 
 {
-	//TODO refactor
+	import com.greensock.easing.*;
+	import com.lowoui_as.Global;
+	import com.lowoui_as.component.LoaderSWF;
+	import com.lowoui_as.dialogs.Dialog;
+	
 	import com.lowoui_as.sample.config.AssetPath;
-	import com.lowoui_as.sample.Global;
+	import com.lowoui_as.sample.config.Scene;
 	
 	import flash.display.Sprite;
-	import com.lowoui_as.component.LoaderSWF;
-	import com.lowoui_as.sample.config.Scene;
-	import com.lowoui_as.dialogs.Dialog;
-	import com.greensock.TweenLite;
-	import com.greensock.easing.*;
+	import flash.display.MovieClip;
+	
 
 	public class WidgetController extends Sprite
 	{
-		public static var _container:Object;	
+		public static var container:Object = null;	
 		public static var widgetsArr:Array = [];
 		
-		private var yesnoDialog:LoaderSWF;
-		private var yesDialog:LoaderSWF;
-		private var noticeDialog:LoaderSWF;
+		private var yesnoDialog:LoaderSWF = null;	
+		private var yesDialog:LoaderSWF = null;	
+		private var noticeDialog:LoaderSWF = null;
+		
+		public static var currScene:String;
 		
 		public function WidgetController() 
 		{
 		}
 		
-		/**
-		 * Scene
-		 * @param	sName
-		 */
 		public function LoadScene(sName:String) : void
 		{			
 			if (Global.hudManager != null) Global.hudManager.UpdateChatMsg("scene name:"+sName);
@@ -35,7 +34,7 @@
 			UnloadAllWidget();
 			loadWidgets(Scene["scene_" + sName]);
 			
-			Global.currScene = sName;
+			currScene = sName;
 		}
 		private function loadWidgets(arr:Array) : void 
 		{
@@ -52,10 +51,6 @@
 			}
 		}
 		
-		/**
-		 * Widget
-		 * @param	wName
-		 */
 		public function LoadWidget(wName:String,depth:int) : void
 		{			
 			if (Global.hudManager != null) Global.hudManager.UpdateChatMsg("scene name:"+wName);
@@ -74,7 +69,7 @@
 			var widgetCon:LoaderSWF = new LoaderSWF();
 			widgetCon.name = wName;
 			widgetCon.loadSWF(AssetPath.swfURL(wName));
-			_container.addChild(widgetCon);
+			container.addChild(widgetCon);
 			
 			//set widget weight
 			widgetCon.widgetWeight = depth;
@@ -112,7 +107,7 @@
 				{					
 					//var index:uint = widgetsArr.indexOf(wCon);
 					widgetsArr[i].unloadSWF();
-					_container.removeChild(widgetsArr[i]);
+					container.removeChild(widgetsArr[i]);
 					widgetsArr[i] = null;
 					
 					widgetsArr.splice(i, 1);
@@ -127,7 +122,7 @@
 			{
 				widgetsArr[i].unloadSWF();
 				
-				_container.removeChild(widgetsArr[i]);
+				container.removeChild(widgetsArr[i]);
 				widgetsArr[i] = null;
 			}
 			widgetsArr = [];
@@ -173,23 +168,23 @@
 		}
 		public function CloseDialog(dialogName:String) : void
 		{
-			var _dialog:Object;
+			var dialog:Object;
 			
 			switch (dialogName) 
 			{
 				case "YesNoDialog":
-					_dialog = yesnoDialog.contentCon["dialog"];
+					dialog = yesnoDialog.contentCon["dialog"];
 					break;
 				case "YesDialog":
-					_dialog = yesDialog.contentCon["dialog"];
+					dialog = yesDialog.contentCon["dialog"];
 					break;
 				case "NoticeDialog":
-					_dialog = yesDialog.contentCon["dialog"];
+					dialog = yesDialog.contentCon["dialog"];
 					break;
 				default:
 			}
 			
-			_dialog.closeDialog();
+			dialog.closeDialog();
 		}
 		private function openDialogToStage(dialogLoader:LoaderSWF, dialogLoaderName:String) : void 
 		{
@@ -198,14 +193,14 @@
 				dialogLoader = new LoaderSWF();
 				dialogLoader.name = dialogLoaderName;
 				dialogLoader.loadSWF(AssetPath.swfURL(dialogLoaderName));
-				_container.addChild(dialogLoader);
+				container.addChild(dialogLoader);
 			}
 			else
 			{
 				dialogLoader.contentCon["dialog"].openAndUpdate();
 			}
 			//set dialog to max depth
-			_container.setChildIndex(dialogLoader, _container.numChildren - 1);
+			container.setChildIndex(dialogLoader, container.numChildren - 1);
 		}
 		
 		
@@ -268,32 +263,34 @@
 		
 		public static function getWidgetByName(wName:String):Object
 		{
-			for each(var _obj:Object in widgetsArr)
+			for each(var obj:Object in widgetsArr)
 			{
-				if (_obj.name == wName)
-				{ return _obj.contentCon; }
+				if (obj.name == wName)
+				{ return obj.contentCon; }
 			}
 			
 			return null;
 		}
 		public static function getWidgetConByName(wName:String):Object
 		{
-			for each(var _obj:Object in widgetsArr)
+			for each(var obj:Object in widgetsArr)
 			{
-				if (_obj.name == wName)
-				{ return _obj; }
+				if (obj.name == wName)
+				{ return obj; }
 			}
 			
 			return null;
 		}
 		
-		
-		/**
-		 * update widget depth
-		 */
-		public function checkWidgetDepth(wName:String):void
+		public static function checkWidgetDepth(wName:String):void
 		{
 		}
+		
+		public static function setToTheHighestDepth(objName:String):void
+		{
+			var obj:MovieClip = getWidgetConByName(objName) as MovieClip;
+			//var obj2:MovieClip = _con.getChildAt(_con.numChildren - 1);
+			if (obj != null) container.setChildIndex(obj, container.numChildren - 1);
+		}
 	}
-
 }

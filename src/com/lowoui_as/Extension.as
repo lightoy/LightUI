@@ -6,9 +6,6 @@ package com.lowoui_as
 
 	public class Extension 
 	{
-		public function Extension() { }
-		
-		/**extension functions*/
 		public static function setMcDisabled(...args):void
 		{
 			for (var i:uint = 0; i < args.length; i++) 
@@ -61,5 +58,4 @@ package com.lowoui_as
 			return _pt;
 		}
 	}
-
 }

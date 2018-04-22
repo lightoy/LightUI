@@ -1,8 +1,3 @@
-/*
- *Create by Geordi 14th Feb 2008
- *function DrawSector is drawing a sector in the flash by actionscript 3 
-*/
-
 package com.lowoui_as.utils
 {
 	import flash.display.MovieClip;

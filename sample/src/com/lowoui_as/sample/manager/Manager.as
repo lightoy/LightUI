@@ -2,7 +2,7 @@
 {
 	import com.lowoui_as.controller.WidgetController;
 	import com.lowoui_as.sample.config.Scene;
-	import com.lowoui_as.sample.Global;
+	import com.lowoui_as.Global;
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
@@ -13,50 +13,71 @@
 	
 	public class Manager extends Sprite
 	{
-		private var loadSceneWidget:WidgetController;
+		private var widgetController:WidgetController;
 		//private var keyboardEvents:KeyController;
 		
-		public var isGameOptionShow:Boolean;
-		
+		//cunstom
 		//private var __cursor:Cursor_con;
+		
 		private var __testBtns1:Object;
 		private var __testBtns2:Object;
 		
+		public var isGameOptionShow:Boolean;
+
 		public function Manager()
 		{
+			Global.manager = this;
+			
 			/**
 			 * Extensions of scaleform GFx
 			 */
 			//Extensions.enabled = true;
 			//Extensions.noInvisibleAdvance = true;
 			
-			Global.manager = this;
+			if (stage) initStageEvents();
+			else       addEventListener(Event.ADDED_TO_STAGE, initStageEvents);
 			
-			//set container for loading swf files
-			loadSceneWidget = new WidgetController();
-			WidgetController._container = this;
-			
+			//initialize:load default scene
+			//if (Global.isGfxMode) {
+				//ExternalInterface.call("A2U_ManagerInitialized");
+				//
+				//if (Extensions.isGFxPlayer)	
+					//U2A_LoadScene(Scene.s_Login);
+			//}
+			//else {
+				U2A_LoadScene(Scene.s_Demo);
+			//}
+				
+			if(Global.isTestMode)
+				addTestButtons();
+				
 			//add listener for game options
 			this.addEventListener("gameSettings", onGameSettings);
 			this.addEventListener("prevScene", onPrevScene);
 			this.addEventListener("quitGame", onQuitGame);
 			this.addEventListener("closeGameoptions", onCloseGameOptions);
+		}
+		
+		private function initStageEvents(e:Event = null):void
+		{
+			removeEventListener(Event.ADDED_TO_STAGE, initStageEvents);
+			
+			stage.scaleMode = StageScaleMode.NO_SCALE;
+			stage.align = StageAlign.TOP_LEFT;
+			
+			//TODO: import for updating as3 class library when some basic class had been updated
+			//loadSceneWidget.LoadWidget(SceneWidget.w_Component,1);
+			//loadSceneWidget.UnloadWidget(SceneWidget.w_Component);
+			
+			//set container for loading swf files
+			widgetController = new WidgetController();
+			WidgetController.container = this;
 			
 			//add keyboard event listener
 			//keyboardEvents = new KeyController();
 			//addChild(keyboardEvents);
-			//this.addEventListener("onKeyDown", fOnKeyDown);
-			//this.addEventListener("onKeyUp", fOnKeyUp);
-			
-			if (stage) initStageEvents();
-			else       addEventListener(Event.ADDED_TO_STAGE, initStageEvents);
-			
-			/**
-			 * todo:
-			 * import for updating as3 class library when some basic class had been updated
-			 */
-			//loadSceneWidget.LoadWidget(SceneWidget.w_Component,1);
-			//loadSceneWidget.UnloadWidget(SceneWidget.w_Component);
+			stage.addEventListener(KeyboardEvent.KEY_DOWN, fKeyDown);
+			stage.addEventListener(KeyboardEvent.KEY_UP, fKeyUp);
 			
 			// setup the custom cursor.
 			//Mouse.hide();
@@ -65,44 +86,11 @@
 			//Extension.setMcDisabled(__cursor);
 			//InteractiveObjectEx.setHitTestDisable(__cursor, true);
 			//stage.addEventListener(MouseEvent.MOUSE_MOVE, updateMouse, false, 0, true);
-			
-			
-			//initialize:load default scene
-			/*if (Global.isGfxMode) {
-				ExternalInterface.call("A2U_ManagerInitialized");
-				if (Extensions.isGFxPlayer)	
-					U2A_LoadScene(Scene.s_Login);
-			}
-			else*/ 
-				U2A_LoadScene(Scene.s_Demo);
-				
-			if(Global.isTestMode)
-				addTestButtons();
-		}
-		
-		private function initStageEvents(e:Event = null):void
-		{
-			stage.scaleMode = StageScaleMode.NO_SCALE;
-			stage.align = StageAlign.TOP_LEFT;
-			
-			stage.addEventListener(KeyboardEvent.KEY_DOWN, fKeyDown);
-			stage.addEventListener(KeyboardEvent.KEY_UP, fKeyUp);
-		}
-		
-		private function updateMouse(e:MouseEvent):void
-		{
-			/*if (__cursor != null) {
-				__cursor.x = this.mouseX;
-				__cursor.y = this.mouseY;
-				
-				//empty stub is added, no need to do anything in it.
-				//e.updateAfterEvent();
-			}*/
 		}
 		
 		private function addTestButtons():void
 		{
-			/*__testBtns1 = this["testBtns1"];
+			__testBtns1 = this["testBtns1"];
 			__testBtns1.visible = false;
 			__testBtns2 = this["testBtns2"];
 			__testBtns2.y = 40;
@@ -125,7 +113,7 @@
 			{
 				__testBtns1.getChildAt(i).addEventListener(MouseEvent.MOUSE_DOWN, onBtnMouseDown);
 				___testBtns1Arr.push(__testBtns1.getChildAt(i));
-			}*/
+			}
 		}
 		
 		private function onBtnMouseDown(evt:MouseEvent):void
@@ -133,46 +121,46 @@
 			switch (evt.currentTarget.name)
 			{
 				case "btnLoadComponent": 
-					loadSceneWidget.LoadWidget("Component", 1);
+					widgetController.LoadWidget("Component", 1);
 					break;
 				case "btnUnLoadComponent": 
-					loadSceneWidget.UnloadWidget("Component");
+					widgetController.UnloadWidget("Component");
 					break;
 				case "btnLoadSceneLogin": 
-					loadSceneWidget.LoadScene("Login");
+					widgetController.LoadScene("Login");
 					break;
 				case "btnLoadSceneSelectCharacter": 
-					loadSceneWidget.LoadScene("SelectCharacter");
+					widgetController.LoadScene("SelectCharacter");
 					break;
 				case "btnLoadSceneLobby": 
-					loadSceneWidget.LoadScene("SafeHouse");
+					widgetController.LoadScene("SafeHouse");
 					break;
 				case "btnLoadSceneHud": 
-					loadSceneWidget.LoadScene("Hud");
+					widgetController.LoadScene("Hud");
 					break;
 				case "btnLoadWidgetMinimap": 
-					loadSceneWidget.LoadWidget("Minimap", 1);
+					widgetController.LoadWidget("Minimap", 1);
 					break;
 				case "btnUnloadWidgetMinimap": 
-					loadSceneWidget.UnloadWidget("Minimap");
+					widgetController.UnloadWidget("Minimap");
 					break;
 				case "btnUnloadWidgetAll": 
-					loadSceneWidget.UnloadAllWidget();
+					widgetController.UnloadAllWidget();
 					break;
 				case "btnOpenDialogYes": 
 					//ExternalInterface.call("A2U_OpenDialogYes");
 					//if (Extensions.isGFxPlayer)
-					loadSceneWidget.OpenDialogYes("NOTICE", "Welcome to mercury world!", "yesCallFun");
+					widgetController.OpenDialogYes("NOTICE", "Welcome to mercury world!", "yesCallFun");
 					break;
 				case "btnOpenDialogYesNo": 
 					//ExternalInterface.call("A2U_OpenDialogYesNo");
 					//if (Extensions.isGFxPlayer)
-					loadSceneWidget.OpenDialogYesNo("NOTICE", "Are you sure to quit now?", "yesCallFun", "noCallFun");
+					widgetController.OpenDialogYesNo("NOTICE", "Are you sure to quit now?", "yesCallFun", "noCallFun");
 					break;
 				case "btnCloseDialog": 
 					//ExternalInterface.call("A2U_CloseDialog");
 					//if (Extensions.isGFxPlayer)
-					loadSceneWidget.CloseDialog("YesNoDialog");
+					widgetController.CloseDialog("YesNoDialog");
 					break;
 				default: 
 			}
@@ -238,17 +226,17 @@
 		
 		private function onPressESC():void 
 		{
-			if (Global.isTabPanelShow) {
+			//if (Global.isTabPanelShow) {
 				//loadSceneWidget.CloseWidget(SceneWidget.w_TABPanel);
-			}
-			else {
+			//}
+			//else {
 				//toggleGameOptionPanel();
-			}
+			//}
 		}
 		private function fKeyUp(e:KeyboardEvent):void
 		{
-			if (Global.hudManager != null)
-				Global.hudManager.playerMoveStatus(false);
+			//if (Global.hudManager != null)
+				//Global.hudManager.playerMoveStatus(false);
 			
 			Global.isAltKeyPressed = false;
 		}
@@ -301,15 +289,6 @@
 			isGameOptionShow = false;
 		}
 		
-		public function setToTheHighestDepth(objName:String):void
-		{
-			var _con:Object = WidgetController._container;
-			var obj:MovieClip = WidgetController.getWidgetConByName(objName) as MovieClip;
-			//var obj2:MovieClip = _con.getChildAt(_con.numChildren - 1);
-			
-			if (obj != null) _con.setChildIndex(obj, _con.numChildren - 1);
-		}
-		
 		
 		/********************************************
 		   U call AS functions
@@ -317,7 +296,7 @@
 		//widget controller
 		public function U2A_OpenWidget(wName:String)
 		{
-			loadSceneWidget.LoadWidget(wName, 1);
+			widgetController.LoadWidget(wName, 1);
 		}
 		public function U2A_CloseWidget(wName:String)
 		{
@@ -326,39 +305,32 @@
 		
 		public function U2A_SceneMovieOut(sceneName:String)
 		{
-			loadSceneWidget.SceneMovieOut(sceneName);
+			widgetController.SceneMovieOut(sceneName);
 		}
 		public function U2A_LoadScene(sName:String):void
 		{
-			loadSceneWidget.LoadScene(sName);
+			widgetController.LoadScene(sName);
 		}
 		public function U2A_OpenDialogYes(title:String, info:String, yesCallFun:String)
 		{
-			loadSceneWidget.OpenDialogYes(title, info, yesCallFun);
+			widgetController.OpenDialogYes(title, info, yesCallFun);
 		}
 		
 		public function U2A_OpenDialogYesNo(title:String, info:String, yesCallFun:String, noCallFun:String)
 		{
-			loadSceneWidget.OpenDialogYesNo(title, info, yesCallFun, noCallFun);
+			widgetController.OpenDialogYesNo(title, info, yesCallFun, noCallFun);
 		}
 		
 		public function U2A_OpenDialogNotice(title:String, info:String, time:Number)
 		{
-			loadSceneWidget.OpenDialogNotice(title, info, time);
+			widgetController.OpenDialogNotice(title, info, time);
 		}
 		
 		public function U2A_CloseDialog(dialogName:String)
 		{
-			loadSceneWidget.CloseDialog(dialogName);
+			widgetController.CloseDialog(dialogName);
 		}
-		
-		//initialize widget data
-		//public function U2A_UpdateRoleCandidateList(arr:Array, selectedIdx:uint):void
-		//{
-			//var _widgetMovie:MovieClip = WidgetController.getWidgetByName(Scene.w_SelectCharacter) as MovieClip;
-			//_widgetMovie.U2A_UpdateRoleCandidateList(arr, selectedIdx);
-		//}
-		
+
 		/////////////////////////////////////////////////////
 		//                     Minimap
 		/////////////////////////////////////////////////////
@@ -397,23 +369,6 @@
 			var _widget:Object = WidgetController.getWidgetByName(widgetName);
 			if (_widget == null) return 0;
 			else                 return 1;
-		}
-		
-		/////////////////////////////////////////////////////
-		//                       Hud
-		/////////////////////////////////////////////////////
-		//character info
-		
-		//chat panel
-		public function OpenChatPanel()
-		{
-			if(Global.hudManager!=null)
-				Global.hudManager.OpenChatPanel();
-		}
-		public function U2A_UpdateChatMsg(msg:String):void
-		{
-			if(Global.hudManager!=null)
-				Global.hudManager.UpdateChatMsg(msg);
 		}
 	}
 }
