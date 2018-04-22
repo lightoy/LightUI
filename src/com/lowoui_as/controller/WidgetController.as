@@ -3,7 +3,7 @@
 	import com.greensock.easing.*;
 	import com.lowoui_as.Global;
 	import com.lowoui_as.component.LoaderSWF;
-	import com.lowoui_as.dialogs.Dialog;
+	import com.lowoui_as.core.Dialog;
 	
 	import com.lowoui_as.sample.config.AssetPath;
 	import com.lowoui_as.sample.config.Scene;

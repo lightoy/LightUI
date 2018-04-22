@@ -1,4 +1,4 @@
-﻿package com.lowoui_as.dialogs 
+﻿package com.lowoui_as.core 
 {	
 	import com.lowoui_as.Extension;
 	import com.lowoui_as.core.UIMovie;

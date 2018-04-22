@@ -1,6 +1,6 @@
-package com.lowoui_as.dialogs 
+package com.lowoui_as.feature 
 {
-	import com.lowoui_as.dialogs.Dialog;
+	import com.lowoui_as.core.Dialog;
 
 	public class YesNoDialog extends Dialog
 	{

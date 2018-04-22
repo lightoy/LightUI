@@ -1,4 +1,4 @@
-package com.lowoui_as.events2
+package com.lowoui_as.events
 {
 	import flash.events.Event;
 

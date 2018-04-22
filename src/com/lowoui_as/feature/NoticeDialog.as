@@ -1,12 +1,11 @@
-package com.lowoui_as.dialogs 
+package com.lowoui_as.feature 
 {
-	import com.lowoui_as.dialogs.Dialog;
+	import com.lowoui_as.core.Dialog;
 	import com.greensock.TweenLite;
 	import fl.motion.easing.*;
 
 	public class NoticeDialog extends Dialog
 	{
-		
 		public function NoticeDialog() 
 		{
 			super(0, 0, 0, 0, 1, 1);
@@ -27,5 +26,4 @@ package com.lowoui_as.dialogs
 			}
 		}
 	}
-
 }

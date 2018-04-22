@@ -1,4 +1,4 @@
-package com.lowoui_as.bg 
+package com.lowoui_as.feature 
 {
 	import com.lowoui_as.core.UIMovie;
 	import com.lowoui_as.animation.Particles;

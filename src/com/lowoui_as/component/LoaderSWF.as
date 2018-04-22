@@ -6,9 +6,9 @@ package com.lowoui_as.component
 	import flash.events.Event;
 	import flash.net.URLRequest;
 	
-	import com.lowoui_as.dialogs.YesDialog;
-	import com.lowoui_as.dialogs.YesNoDialog;
-	import com.lowoui_as.dialogs.NoticeDialog;
+	import com.lowoui_as.feature.YesDialog;
+	import com.lowoui_as.feature.YesNoDialog;
+	import com.lowoui_as.feature.NoticeDialog;
 	
 	public class LoaderSWF extends MovieClip
 	{
