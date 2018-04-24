@@ -6,7 +6,7 @@ package com.lowoui_as
 
 	public class SceneManager extends Sprite
 	{
-		public static var _ins:SceneManager = null;
+		private static var _ins:SceneManager = null;
 		public static function get ins():SceneManager {
 			if (_ins == null)
 				_ins = new SceneManager();

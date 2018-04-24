@@ -1,25 +1,30 @@
 package com.lowoui_as.config
 {
-	//import com.lang.ZH_CN;
-	//import com.lang.EN_US;
+	import com.lowoui_as.sample.config.lang.Lang;
+	import com.lowoui_as.sample.config.lang.LangTyp;
+	import com.lowoui_as.sample.config.lang.ZH_CN;
+	//import com.lowoui_as.sample.config.lang.EN_US;
 
 	public class ConfigLang
 	{
-		/**
-		 * Lang_ZH_CN
-		 * Lang_ZH_TW
-		 * Lang_EN_US
-		 * Lang_PT_BR
-		 * Lang_TR_TR
-		 * Lang_Thai
-		 * Lang_RUS
-		 */
+		public static var curTyp:String = LangTyp.Lang_ZH_CN;
 
-		//public static var Type = ZH_CN;
+		public static function get Type():Lang {
+			var t = null;
+
+			switch (curTyp)
+			{
+				case LangTyp.Lang_ZH_CN:
+					t = ZH_CN.ins;
+					break;
+				default:
+					break;
+			}
+
+			return t;
+		}
 
 		//public static var Common          = Type["Common_"];
-		//public static var SelectCharacter = Type["SelectCharacter_"];
 		//public static var Charpters       = Type["Charpters_"];
-		//public static var Mission         = Type["Mission_"];
 	}
 }

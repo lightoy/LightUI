@@ -8,12 +8,10 @@
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 
-
-
-
 	public class WidgetManager extends Sprite
 	{
-		public static var _ins:WidgetManager = null;
+		private static var _ins:WidgetManager = null;
+
 		public static function get ins():WidgetManager {
 			if (_ins == null)
 				_ins = new WidgetManager();
@@ -35,6 +33,7 @@
 			for (var i:int = 0; i < arr.length; i++)
 			{ LoadWidget(arr[i][0], arr[i][1]); }
 		}
+
 		//Scene Out
 		public function SceneMovieOut(sName:String):void
 		{
@@ -71,6 +70,7 @@
 
 			widgetsArr.push(widgetCon);
 		}
+
 		public function CloseWidget(wName:String) : void
 		{
 			if (widgetsArr.length == 0) { return; }
@@ -83,6 +83,7 @@
 				}
 			}
 		}
+
 		public function CloseCurrSceneWidgets()
 		{
 			if (widgetsArr.length == 0) { return; }
@@ -92,6 +93,7 @@
 				widgetsArr[i].contentCon.closeView();
 			}
 		}
+
 		public function UnloadWidget(wName:String) : void
 		{
 			if (widgetsArr.length == 0) { return; }
@@ -109,6 +111,7 @@
 				}
 			}
 		}
+
 		public function UnloadAllWidget()
 		{
 			if (widgetsArr.length == 0) { return; }
@@ -122,10 +125,12 @@
 			}
 			widgetsArr = [];
 		}
+
 		//set visible status
 		public function SetWidgetVisible(wName:String,visible:Boolean) : void
 		{
 		}
+
 		//change widget property : size
 		public function SetWidgetSize(wName:String, width:uint, height:uint) : void
 		{
@@ -144,6 +149,7 @@
 
 			openDialogToStage(yesnoDialog,"YesNoDialog");
 		}
+
 		public function OpenDialogYes(title:String, info:String, yesCallFun:String) : void
 		{
 			trace("yesCallFun:"+yesCallFun);
@@ -153,6 +159,7 @@
 
 			openDialogToStage(yesDialog,"YesDialog");
 		}
+
 		public function OpenDialogNotice(title:String, info:String, time:Number) : void
 		{
 			UIDialog.dialogTitle        = title;
@@ -161,6 +168,7 @@
 
 			openDialogToStage(noticeDialog, "NoticeDialog");
 		}
+
 		public function CloseDialog(dialogName:String) : void
 		{
 			var dialog:Object = null;
@@ -182,6 +190,7 @@
 			if(dialog != null)
 				dialog.closeDialog();
 		}
+
 		private function openDialogToStage(dialogLoader:LoaderSWF, dialogLoaderName:String) : void
 		{
 			if (dialogLoader == null)
@@ -199,7 +208,6 @@
 			container.setChildIndex(dialogLoader, container.numChildren - 1);
 		}
 
-
 		//test exteral interface
 		public static function callFunction(wName:String,arr:Array/*fName:String,param1,param2...*/) : void
 		{
@@ -216,7 +224,6 @@
 			{ _widget[ff](); }
 		}
 
-
 		/**
 		 * when dialog pop up
 		 */
@@ -232,6 +239,7 @@
 				{ widgetsArr[i].contentCon.inactiveView(); }
 			}
 		}
+
 		public static function activeWidgetView()
 		{
 			trace("close dialog and active view.");
@@ -250,12 +258,12 @@
 			var _widget:Object = getWidgetByName(wName);
 			if (_widget != null) { _widget.activeView(); }
 		}
+
 		public static function inactiveWidget(wName:String):void
 		{
 			var _widget:Object = getWidgetByName(wName);
 			if (_widget != null) { _widget.inactiveView(); }
 		}
-
 
 		public static function getWidgetByName(wName:String):Object
 		{
@@ -267,6 +275,7 @@
 
 			return null;
 		}
+
 		public static function getWidgetConByName(wName:String):Object
 		{
 			for each(var obj:Object in widgetsArr)

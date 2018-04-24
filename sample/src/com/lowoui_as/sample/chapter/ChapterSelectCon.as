@@ -1,11 +1,12 @@
-package com.lowoui_as.sample.chapter 
+﻿package com.lowoui_as.sample.chapter
 {
 	import com.greensock.easing.*;
 	import com.greensock.TweenLite;
+	import com.lowoui_as.config.ConfigLang;
 	import flash.display.DisplayObjectContainer;
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
-	
+
 	public class ChapterSelectCon extends MovieClip
 	{
 		private var charptersArr:Vector.<DisplayObjectContainer>;
@@ -13,32 +14,31 @@ package com.lowoui_as.sample.chapter
 		private var charptersLockArr:Vector.<Boolean>;
 		private var currIdex:uint;
 		private const scale:Number = 330/400;
-		
+
 		public var _isDrag:Boolean;
-		
+
 		private var __charpterDetailCon:MovieClip;
-		
-		public function ChapterSelectCon() 
+
+		public function ChapterSelectCon()
 		{
 			charptersArr     = new Vector.<DisplayObjectContainer>();
 			charptersInfoArr = new Vector.<String>();//(6,true)/**if this array's length > max number,the second parameter should be set to false*/
 			charptersLockArr = new Vector.<Boolean>();
-			
+
 			_isDrag = false;
-			
-			for (var i:int = 0; i < 6; i++) 
-				charptersArr.push(this["charpter_" + (i + 1)]); 
-			
-			charptersInfoArr.push(	"前传 : 神秘事件",
-									"初章 : 暗黑无界",//Into Darkness
-									"第二章 : 撤离迪拜城",//Escape
-									"第三章 : 突出重围",//Introspection
-									"第四章 : 新生力量",//Alien
-									"第五章 : 外星人之谜"//Revenge
-									//,"Charpter Six : Renascence"
+
+			for (var i:int = 0; i < 6; i++)
+				charptersArr.push(this["charpter_" + (i + 1)]);
+
+			charptersInfoArr.push(  ConfigLang.Type.Charpters_Name1,
+									ConfigLang.Type.Charpters_Name2,
+									ConfigLang.Type.Charpters_Name3,
+									ConfigLang.Type.Charpters_Name4,
+									ConfigLang.Type.Charpters_Name5,
+									ConfigLang.Type.Charpters_Name6
 									);
 			charptersLockArr.push(true, false, false, false, false, false);
-			
+
 			for each(var obj:Object in charptersArr)
 			{
 				var idx:uint = charptersArr.indexOf(obj);
@@ -65,35 +65,38 @@ package com.lowoui_as.sample.chapter
 				obj.addEventListener(MouseEvent.CLICK, onCharpterClick, false, 0, true);
 			}
 		}
-		private function onCharpterOver(e:MouseEvent):void 
+
+		private function onCharpterOver(e:MouseEvent):void
 		{
 			//trace("over charpter...");
 		}
-		private function onCharpterClick(e:MouseEvent):void 
+
+		private function onCharpterClick(e:MouseEvent):void
 		{
 			if(!_isDrag) openCharpterDetail();
 		}
-		
-		public function openCharpterDetail():void 
+
+		public function openCharpterDetail():void
 		{
 			if (__charpterDetailCon == null)
 			{__charpterDetailCon = this["root"]["charpterDetailCon"]; }
-			
+
 			__charpterDetailCon.openView();
 		}
-		
-		public function updatePos(moveX:Number):void 
+
+		public function updatePos(moveX:Number):void
 		{
-			for each (var obj:Object in charptersArr) 
+			for each (var obj:Object in charptersArr)
 			{
 				obj.x += moveX;
 			}
 		}
-		public function updateShow(idx:uint):void 
+
+		public function updateShow(idx:uint):void
 		{
 			currIdex = idx;
-			
-			for each (var obj:DisplayObjectContainer in charptersArr) 
+
+			for each (var obj:DisplayObjectContainer in charptersArr)
 			{
 				if (obj.scaleX == 1)
 				{
@@ -101,7 +104,7 @@ package com.lowoui_as.sample.chapter
 					obj.scaleY = scale;
 					//ColorFilter.setGrayscale(true, obj["imgCon"]);
 				}
-				
+
 				var _idx:uint = charptersArr.indexOf(obj);
 				if (_idx == currIdex)
 				{

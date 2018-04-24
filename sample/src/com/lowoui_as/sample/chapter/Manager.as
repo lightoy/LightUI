@@ -3,12 +3,12 @@
 	import com.greensock.TweenLite;
 	import com.greensock.easing.*;
 	import com.lowoui_as.WidgetManager;
+	import com.lowoui_as.config.ConfigLang;
 	import com.lowoui_as.core.UIMovie;
 	import flash.events.MouseEvent;
 
 	public class Manager extends UIMovie
 	{
-		/**public variable*/
 		public var isOpenCharpterSelect:Boolean;
 		public var isOpenCharpterDetail:Boolean;
 
@@ -19,6 +19,7 @@
 		{
 			super(0, 0, 0, 0, 0, 0);
 		}
+
 		override protected function initialize()
 		{
 			super.initialize();
@@ -30,7 +31,7 @@
 			__bg         = this["bg"];
 
 
-			__btnConfirm.setName("返回");
+			__btnConfirm.setName(ConfigLang.Type.Comn_Btn_Close);
 			__btnConfirm.setSize(120, 30);
 
 			__btnConfirm.addEventListener(MouseEvent.CLICK, onConfirm);
@@ -38,6 +39,7 @@
 			//initialize
 			initializeView();
 		}
+
 		override public function updateDataView()
 		{
 			//AS2US.InitializeSceneWidget("Charpters","Charpters");
@@ -60,10 +62,12 @@
 
 			WidgetManager.activeWidgetView();
 		}
+
 		override protected function movieIn()
 		{
 			super.movieIn();
 			//childrenMcMovie(this,"movie_in");
+
 			this["charptersCon"].openView();
 			isOpenCharpterSelect = true;
 
@@ -75,6 +79,7 @@
 
 			//WidgetController.inactiveWidgetView();
 		}
+
 		override protected function movieOut()
 		{
 			super.movieOut();
@@ -86,6 +91,7 @@
 			TweenLite.to(btnConfirm, 0.3, { delay:0, z:200, alpha:0, ease:Strong.easeOut } );
 			TweenLite.to(__bg, 0.5, { delay:0, z: 0, alpha:0, ease:Strong.easeOut } );
 		}
+
 		override public function inactiveView()
 		{
 			super.inactiveView();
@@ -93,6 +99,7 @@
 			if (this["charpterDetailCon"].visible) this["charpterDetailCon"].inactiveView();
 			else this["charptersCon"].inactiveView();
 		}
+
 		override public function activeView()
 		{
 			super.activeView();
@@ -100,7 +107,6 @@
 			if (this["charpterDetailCon"].visible) this["charpterDetailCon"].activeView();
 			else this["charptersCon"].activeView();
 		}
-
 
 		override public function resetPos(posInfo:Object) : void
 		{
@@ -114,7 +120,6 @@
 			TweenLite.to(__bg, 0.3, { alpha:1, ease:Sine.easeOut } );
 		}
 
-		//publicfunction
 		public function UpdateCharptersList(cArr:Array) : void
 		{
 			//this["charptersCon"].openView();
