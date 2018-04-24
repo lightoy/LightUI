@@ -1,8 +1,6 @@
 ﻿package com.lowoui_as.component 
 {
 	import com.lowoui_as.utils.PlaySound;
-	//import com.business.Global;
-	//import com.business.config.Lang;
 
 	public class TurnPage extends MovieClip
 	{
@@ -19,8 +17,8 @@
 			
 			this["page"].selectable = false;
 			
-			this["btnPrev"]["tt"].text = Lang.Type.PersonalHome.PageGoPrev;
-			this["btnNext"]["tt"].text = Lang.Type.PersonalHome.PageGoNext;
+			this["btnPrev"]["tt"].text = "Prev";//Lang.Type.PersonalHome.PageGoPrev;
+			this["btnNext"]["tt"].text = "Next";//Lang.Type.PersonalHome.PageGoNext;
 			
 			this["btnPrev"]["btn"].onRelease = fRelease;
 			this["btnNext"]["btn"].onRelease = fRelease;
@@ -34,7 +32,7 @@
 				{
 					PlaySound.sounder.play("Button_Next", "onClick");
 					_this.currentPage--;
-					Global.mainMC._tempMain.currentOverItem = 999;
+					// Global.mainMC._tempMain.currentOverItem = 999;
 				}
 			}
 			else if(this._parent._name=="btnNext")
@@ -43,7 +41,7 @@
 				{
 					PlaySound.sounder.play("Button_Next", "onClick");
 					_this.currentPage++;
-					Global.mainMC._tempMain.currentOverItem = 999;
+					// Global.mainMC._tempMain.currentOverItem = 999;
 				}
 			}
 			

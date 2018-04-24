@@ -28,9 +28,8 @@
 		public static function setHue(hue:Number,obj:Object) : void
 		{
 			if (hue == 0 || isNaN(hue))
-			{
 				return;
-			}
+				
 			hue = Math.min(180, Math.max(-180, hue)) / 180 * Math.PI;
 			var cosVal:Number = Math.cos(hue);
 			var sinVal:Number = Math.sin(hue);
@@ -96,5 +95,4 @@
 		//myColorTransform.aa = alpha;
 		//myColor.setTransform(myColorTransform);
 	}
-
 }

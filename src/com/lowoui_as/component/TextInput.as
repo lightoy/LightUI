@@ -166,4 +166,5 @@
 				iBg.gotoAndStop("defocus"); 
 			}
 		}
+	}
 }

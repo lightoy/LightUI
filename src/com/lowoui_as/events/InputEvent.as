@@ -14,7 +14,6 @@ package com.lowoui_as.events
 			this.details = details;
 		}
 		
-		// Public getter / setters:
 		// This can be modified to use preventDefault, stopPropagation, or any other internal property depending on needs.
 		public function get handled():Boolean
 		{

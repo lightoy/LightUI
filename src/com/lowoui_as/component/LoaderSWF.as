@@ -1,22 +1,22 @@
-package com.lowoui_as.component 
+package com.lowoui_as.component
 {
 	import com.lowoui_as.events.MovieEvent;
 	import flash.display.MovieClip;
 	import flash.display.Loader;
 	import flash.events.Event;
 	import flash.net.URLRequest;
-	
-	import com.lowoui_as.feature.YesDialog;
-	import com.lowoui_as.feature.YesNoDialog;
-	import com.lowoui_as.feature.NoticeDialog;
-	
+
+	import com.lowoui_as.feature.DialogYes;
+	import com.lowoui_as.feature.DialogYesNo;
+	import com.lowoui_as.feature.DialogNotice;
+
 	public class LoaderSWF extends MovieClip
 	{
 		private var loader:Loader;
-		
+
 		public var contentCon:MovieClip;
 		public var widgetWeight:int;
-		
+
 		public function LoaderSWF()
 		{
 		}
@@ -31,14 +31,14 @@ package com.lowoui_as.component
 			{
 				loader.unloadAndStop();
 			}
-			
+
 			contentCon = new MovieClip();
-			
+
 			loader.load(new URLRequest(_url));
 			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, loadComplete, false, 0, true );
 		}
-		
-		private function loadComplete(e:Event) : void 
+
+		private function loadComplete(e:Event) : void
 		{
 			contentCon = loader.content as MovieClip;
 		}
