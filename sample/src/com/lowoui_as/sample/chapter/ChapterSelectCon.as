@@ -13,6 +13,8 @@
 		private var charptersInfoArr:Vector.<String>;
 		private var charptersLockArr:Vector.<Boolean>;
 		private var currIdex:uint;
+
+		//setting
 		private const scale:Number = 330/400;
 
 		public var _isDrag:Boolean;
@@ -22,7 +24,7 @@
 		public function ChapterSelectCon()
 		{
 			charptersArr     = new Vector.<DisplayObjectContainer>();
-			charptersInfoArr = new Vector.<String>();//(6,true)/**if this array's length > max number,the second parameter should be set to false*/
+			charptersInfoArr = new Vector.<String>();
 			charptersLockArr = new Vector.<Boolean>();
 
 			_isDrag = false;
@@ -56,6 +58,7 @@
 					obj["imgConGray"].visible = true;
 					obj["imgConGray"].gotoAndStop(idx + 1);
 				}
+
 				obj.setName(charptersInfoArr[idx]);
 				//ColorFilter.setGrayscale(true, obj["imgCon"]);
 				obj.x = 200 + 400 * idx;
@@ -68,7 +71,7 @@
 
 		private function onCharpterOver(e:MouseEvent):void
 		{
-			//trace("over charpter...");
+			//trace("charpter over...");
 		}
 
 		private function onCharpterClick(e:MouseEvent):void

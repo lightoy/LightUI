@@ -19,28 +19,22 @@
 		{
 			super();
 
-			//initialize:load default scene
-			//if (Global.isGfxMode) {
-				//ExternalInterface.call("A2U_ManagerInitialized");
-				//
-				//if (Extensions.isGFxPlayer)
-					//U2A_LoadScene(Scene.s_Login);
-			//}
-			//else {
-				U2A_LoadScene(ConfigScene.s_Demo);
-			//}
-
 			if(Global.isTestMode)
 				addTestButtons();
 
-			//add listener for game options
+			//add listeners for game options
 			this.addEventListener("gameSettings", onGameSettings);
 			this.addEventListener("prevScene", onPrevScene);
 			this.addEventListener("quitGame", onQuitGame);
 			this.addEventListener("closeGameoptions", onCloseGameOptions);
+
+			if (Global.isGfxMode) {
+				//ExternalInterface.call("A2U_ManagerInitialized");
+			}
+
+			U2A_LoadScene(ConfigScene.s_Demo);
 		}
 
-		//keyboard control events
 		private function openTabPanel(menu:String):void{}
 
 		private function openChatPanel(){}
@@ -48,39 +42,21 @@
 		private function onGameSettings(e:Event):void
 		{
 			//loadSceneWidget.LoadWidget(SceneWidget.w_Settings, 3);
-			//isGameOptionShow = false;
+			isGameOptionShow = false;
 		}
 
 		private function onPrevScene(e:Event):void
 		{
 			//ExternalInterface.call("A2U_ToggleUIMode", false);
 			isGameOptionShow = false;
-
-			/*if (Global.currScene == Scene.s_Hud)
-			{
-				loadSceneWidget.LoadScene(Scene.s_SafeHouse);
-			}
-			else if (Global.currScene == Scene.s_SafeHouse)
-			{
-				loadSceneWidget.LoadScene(Scene.s_SelectCharacter);
-			}
-			else
-			   {
-			   //{loadSceneWidget.CloseWidget(Global.currScene);}
-			   //all widgets should be closeed which visible value is true
-			   loadSceneWidget.CloseCurrSceneWidgets();
-			 }*/
-
-			//going out of "hud" scene when HudMenu is visible
 			Global.isTabPanelShow = false;
 		}
 
 		private function onQuitGame(e:Event):void
 		{
 			//ExternalInterface.call("A2U_ToggleUIMode", false);
-			isGameOptionShow = false;
-
 			//ExternalInterface.call("A2U_QuitGame");
+			isGameOptionShow = false;
 		}
 
 		private function onCloseGameOptions(e:Event):void
@@ -230,17 +206,14 @@
 					break;
 				case "btnOpenDialogYes":
 					//ExternalInterface.call("A2U_OpenDialogYes");
-					//if (Extensions.isGFxPlayer)
 					widgetController.OpenDialogYes("NOTICE", "Welcome to mercury world!", "yesCallFun");
 					break;
 				case "btnOpenDialogYesNo":
 					//ExternalInterface.call("A2U_OpenDialogYesNo");
-					//if (Extensions.isGFxPlayer)
 					widgetController.OpenDialogYesNo("NOTICE", "Are you sure to quit now?", "yesCallFun", "noCallFun");
 					break;
 				case "btnCloseDialog":
 					//ExternalInterface.call("A2U_CloseDialog");
-					//if (Extensions.isGFxPlayer)
 					widgetController.CloseDialog("YesNoDialog");
 					break;
 				default:

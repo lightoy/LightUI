@@ -1,18 +1,15 @@
-LowoUI-AS
-=======
+# LowoUI-AS
 
-Create for making user interface with performence of rich animation .
+It created for making user interfaces with rich animation performence, which comes from a game project using scaleform as ui, but you know I really don't like set movie clip to component that make lower convenience for iteration.
 
-It comes from a game project using scaleform as ui, but you know I really don't like set movie clip to component 
-that make lower convenience for iteration.
-
-1, Movie Clip
-
-There enable to create movie in, movie stay and movie out animation with timeline,under this framework. 
-But also ,if you set animtion to the mc using actionscript, the timeline movie will be override.
-So you have mutil-choice to design.
-
-2, Source Manager
-
-
-3, Data Organization
+- **MovieClip** : Creates 'in', 'stay' and 'out' movie state animations are supported with timeline. But also, you can embed them to the MC by using actionscript danamically, if you do this, the timeline animations will be overrided and not work. So you have multiple choices to design it.
+- **Asset Manager**
+    - swf
+    - texture
+    - audio
+    - font
+- **Data Organization**
+    - config
+    - setting
+- **Smaple**
+    - entry : the container of all swfs and customize all interfaces for external call.

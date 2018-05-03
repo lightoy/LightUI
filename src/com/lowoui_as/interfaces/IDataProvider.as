@@ -1,10 +1,9 @@
-﻿package com.lowoui_as.interfaces 
+﻿package com.lowoui_as.interfaces
 {
-	public IDataProvider 
+	public IDataProvider
 	{
-		// Public Methods:
 		// public function get length():Number;
-		
+
 		/**
 		 * Request an item from the given index. Although this method returns an object, the components that use it all expect the item to be returned using the scope/callBack to support delayed data results when dealing with the Game Engine.
 		 * @param index The index in the DataProvider
@@ -13,7 +12,7 @@
 		 * @returns The requested item, if it is immediately available. Note that components will not use the return value.
 		 */
 		function requestItemAt(index:Number, scope:Object, callBack:String):Object;
-		
+
 		/**
 		 * Request an item range from the given index. Although this method returns an object, the components that use it all expect the item to be returned using the scope/callBack to support delayed data results when dealing with the Game Engine.
 		 * @param index The start index of the requested item range
@@ -23,7 +22,7 @@
 		 * @returns The items in the range, if they are immediately available. Note that components will not use the return value.
 		 */
 		function requestItemRange(startIndex:Number, endIndex:Number, scope:Object, callBack:String):Array;
-		
+
 		/**
 		 * Get the index of an item in the DataProvider. Although this method returns an number, the components that use it all expect the item to be returned using the scope/callBack to support delayed data results when dealing with the Game Engine.
 		 * @param value The item in the DataProvider
@@ -32,7 +31,7 @@
 		 * @returns The index of the item in the DataProvider, or -1 if not found.
 		 */
 		function indexOf(item:Object, scope:Object, callBack:String):Number;
-		
+
 		/**
 		 * The dataProvider has changed.
 		 * @param length the current length of the data set, which needs to be kept up to date.

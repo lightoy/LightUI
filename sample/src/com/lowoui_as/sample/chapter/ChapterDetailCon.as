@@ -15,6 +15,7 @@ package com.lowoui_as.sample.chapter
 		{
 			super(0, 0, 0, 0, 1, 1);
 		}
+
 		override protected function initialize()
 		{
 			super.initialize();
@@ -38,6 +39,7 @@ package com.lowoui_as.sample.chapter
 		{
 			closeView();
 		}
+
 		override protected function movieIn()
 		{
 			super.movieIn();
@@ -50,6 +52,7 @@ package com.lowoui_as.sample.chapter
 			this["root"].isOpenCharpterDetail = true;
 			this["root"].isOpenCharpterSelect = false;
 		}
+
 		override protected function movieOut()
 		{
 			super.movieOut();

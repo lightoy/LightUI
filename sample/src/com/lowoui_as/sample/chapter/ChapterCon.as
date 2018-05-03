@@ -29,10 +29,14 @@
 		private var   deltaX      :int;
 		private var   isMouseDrag :Boolean;
 
+		private const maxCharpter:uint = 6;
+		private var currCharpterIdx:int;
+
 		public function ChapterCon()
 		{
 			super(0, 0, 0, 0, 1, 1);
 		}
+
 		override protected function initialize()
 		{
 			super.initialize();
@@ -62,6 +66,7 @@
 
 			this.visible = false;
 		}
+
 		override protected function addedToStage(evt:Event = null) : void
 		{
 			super.addedToStage(null);
@@ -69,11 +74,13 @@
 			stage.addEventListener(MouseEvent.MOUSE_DOWN, onStageDown);
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
 		}
+
 		public function disableStageEvents()
 		{
 			stage.removeEventListener(MouseEvent.MOUSE_DOWN, onStageDown);
 			stage.removeEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
 		}
+
 		private function onKeyPress(e:KeyboardEvent):void
 		{
 			trace(e.keyCode);
@@ -92,6 +99,7 @@
 				default:
 			}
 		}
+
 		private function onStageDown(e:MouseEvent):void
 		{
 			isMouseDrag = true;
@@ -102,6 +110,7 @@
 
 			__charpterSelectCon._isDrag = false;
 		}
+
 		private function onStageMove(e:MouseEvent):void
 		{
 			if (isMouseDrag)
@@ -115,6 +124,7 @@
 				__charpterSelectCon._isDrag = true;
 			}
 		}
+
 		private function onStageUp(e:MouseEvent):void
 		{
 			if (isMouseDrag)
@@ -129,13 +139,13 @@
 				moveCharpter(mIdx);
 			}
 		}
+
 		override public function updateDataView()
 		{
 			//send request
 			//AS2US.InitializeSceneWidget("Charpters","CharpterSelectList");
 		}
 
-		//todo: this part should be refacted
 		override protected function movieIn()
 		{
 			super.movieIn();
@@ -144,25 +154,24 @@
 			this.alpha = 0;
 			TweenLite.to(this, 1, { delay:0, z:0, alpha:1, ease:Strong.easeInOut } );
 		}
+
 		override protected function movieOut()
 		{
 			super.movieOut();
 			TweenLite.to(this, 0.5, { delay:0, z: -500, alpha:0, ease:Strong.easeOut } );
 		}
 
-		private const maxCharpter:uint = 6;
-		private var currCharpterIdx:int;
 		private function onChangeCharpter(e:MouseEvent):void
 		{
-			if (e.currentTarget.name == "btnPrev")     { moveCharpter(1); }
-			else if (e.currentTarget.name == "btnNext"){ moveCharpter(-1); }
+			if (e.currentTarget.name == "btnPrev")      { moveCharpter(1); }
+			else if (e.currentTarget.name == "btnNext") { moveCharpter(-1); }
 		}
 
 		private function moveCharpter(dir:int):void
 		{
 			currCharpterIdx += dir;
-			if (dir < 0)     { currCharpterIdx < 0?currCharpterIdx = 0:currCharpterIdx; }
-			else if (dir > 0){ currCharpterIdx >maxCharpter-1?currCharpterIdx = maxCharpter-1:currCharpterIdx; }
+			if (dir < 0)      { currCharpterIdx < 0?currCharpterIdx = 0:currCharpterIdx; }
+			else if (dir > 0) { currCharpterIdx >maxCharpter-1?currCharpterIdx = maxCharpter-1:currCharpterIdx; }
 
 			__charpterSelectCon.updateShow(currCharpterIdx);
 			updateIndicator(currCharpterIdx);
@@ -171,7 +180,8 @@
 		private function updateIndicator(idx:uint):void
 		{
 			for each (var obj:Object in charpterIndicatorArr)
-			{obj.gotoAndStop(1);}
+			{obj.gotoAndStop(1); }
+
 			charpterIndicatorArr[idx].gotoAndStop(2);
 		}
 	}

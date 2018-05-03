@@ -34,7 +34,6 @@
 			{ LoadWidget(arr[i][0], arr[i][1]); }
 		}
 
-		//Scene Out
 		public function SceneMovieOut(sName:String):void
 		{
 			for (var i:int = 0; i < widgetsArr.length; i++)
@@ -102,7 +101,6 @@
 			{
 				if (widgetsArr[i].name == wName)
 				{
-					//var index:uint = widgetsArr.indexOf(wCon);
 					widgetsArr[i].unloadSWF();
 					container.removeChild(widgetsArr[i]);
 					widgetsArr[i] = null;
@@ -126,16 +124,13 @@
 			widgetsArr = [];
 		}
 
-		//set visible status
 		public function SetWidgetVisible(wName:String,visible:Boolean) : void
 		{
 		}
 
-		//change widget property : size
 		public function SetWidgetSize(wName:String, width:uint, height:uint) : void
 		{
 		}
-
 
 		/**
 		 * Dialog
@@ -208,15 +203,9 @@
 			container.setChildIndex(dialogLoader, container.numChildren - 1);
 		}
 
-		//test exteral interface
 		public static function callFunction(wName:String,arr:Array/*fName:String,param1,param2...*/) : void
 		{
 			trace("callFunction" + arr[0]);
-			/*for (var i:int = 0; i < widgetsArr.length; i++)
-			{
-				if (widgetsArr[i].contentCon.TestCall != undefined)
-				{ widgetsArr[i].contentCon.TestCall(); }
-			}*/
 
 			var ff:String = arr[0];
 			var _widget:Object = getWidgetByName(wName);
@@ -250,9 +239,6 @@
 			}
 		}
 
-		/**
-		 * active widget
-		 */
 		public static function activeWidget(wName:String):void
 		{
 			var _widget:Object = getWidgetByName(wName);
@@ -294,7 +280,6 @@
 		public static function setToTheHighestDepth(objName:String):void
 		{
 			var obj:MovieClip = getWidgetConByName(objName) as MovieClip;
-			//var obj2:MovieClip = _con.getChildAt(_con.numChildren - 1);
 			if (obj != null) container.setChildIndex(obj, container.numChildren - 1);
 		}
 	}

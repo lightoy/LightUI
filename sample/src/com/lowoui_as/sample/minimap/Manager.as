@@ -45,13 +45,13 @@ package com.lowoui_as.sample.minimap
 
 		override protected function movieIn()
 		{
-			//super.movieIn();
+			super.movieIn();
 			__minimap.openView();
 		}
 
 		override protected function movieOut()
 		{
-			//super.movieOut();
+			super.movieOut();
 			__minimap.closeView();
 		}
 

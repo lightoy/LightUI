@@ -36,13 +36,13 @@
 
 			__btnConfirm.addEventListener(MouseEvent.CLICK, onConfirm);
 
-			//initialize
 			initializeView();
 		}
 
 		override public function updateDataView()
 		{
 			//AS2US.InitializeSceneWidget("Charpters","Charpters");
+
 			//test
 			//var arr:Array = new Array(10);
 			//UpdateCharptersList(arr);
@@ -77,7 +77,7 @@
 			__bg.alpha = 0;
 			TweenLite.to(__bg, 0.5, { delay:0, z: 0, alpha:1, ease:Strong.easeOut } );
 
-			//WidgetController.inactiveWidgetView();
+			//WidgetManager.inactiveWidgetView();
 		}
 
 		override protected function movieOut()
@@ -111,6 +111,7 @@
 		override public function resetPos(posInfo:Object) : void
 		{
 			//super.resetPos(posInfo);
+
 			TweenLite.to(__btnConfirm, 0.5, { x:stageWidth / 2-120/2, y:stageHeight - 50, alpha:1, ease:Sine.easeOut } );
 
 			__bg.width=stageWidth;
@@ -122,7 +123,6 @@
 
 		public function UpdateCharptersList(cArr:Array) : void
 		{
-			//this["charptersCon"].openView();
 		}
 	}
 }

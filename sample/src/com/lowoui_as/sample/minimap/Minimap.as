@@ -9,30 +9,23 @@
 	{
 		//private var mapInfo:Array;
 		//private var MapTexSize:uint;
-
 		//private var PlayerIcon:Sprite;
-
 		private var friendsIcons:Array;
 		private var enemiesIcons:Array;
 		//private var flagIcons:Array;
 		//private var objectiveIcons:Array;
-
 		private var showEnemiesArr:Array;
 		private var showFriendsArr:Array;
-
 		private var playerPos:Point;
 		private var posScale:Number = 0.1; //0.1 = 200pix / 2000 ue
-
 		private const MapWidth:int = 224;
 		private const MapHeight:int = 145;
-
 		//private var friendIcon:Class;
 		//private var enemyIcon:Class;
 
 		public function Minimap()
 		{
 			super(170 / 2 + 5, 245 / 2 + 5, 0, 0, 0, 0);
-			//trace(["minimap",thisWidth,thisHeight]);
 
 			friendsIcons = [];
 			enemiesIcons = [];
@@ -59,10 +52,12 @@
 			playerPos.x = wX;
 			playerPos.y = wY;
 		}
+
 		internal function updatePlayerRotation(angle:Number):void
 		{
 			this["playerRotation"].rotation = angle;
 		}
+
 		internal function setMinimapFriends(friendsArr:Array):void
 		{
 			showFriendsArr = [];
@@ -80,6 +75,7 @@
 
 			updateAllObjects(showFriendsArr,"friend");
 		}
+
 		internal function setMinimapEnemies(enemiesArr:Array):void
 		{
 			showEnemiesArr = [];
@@ -111,15 +107,12 @@
 
 		private function updateCurrentObjects(objArr:Array,currTypeIcons:Array,IconType:*):void
 		{
-
 			if (objArr.length > currTypeIcons.length)
 			{
 				for (var i:int = currTypeIcons.length; i < objArr.length; i++)
 				{
 					var currIcon:*= new IconType();
-
 					currTypeIcons.push(currIcon);
-
 					this.addChild(currIcon);
 				}
 			}
@@ -144,12 +137,12 @@
 			thisIcon.y = -(posArr[0]-playerPos.x) * posScale;
 		}
 
-		/**inherit functions*/
 		override public function inactiveView()
 		{
 			super.inactiveView();
 			TweenLite.to(this, 0.5, {alpha:0.25, ease:Sine.easeOut} );
 		}
+
 		override public function activeView()
 		{
 			super.activeView();

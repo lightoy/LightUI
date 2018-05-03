@@ -20,11 +20,11 @@
 	*/
 	public class UIMovie extends MovieClip
 	{
-		//protected var sceneManager    : WidgetController;
 		protected var thisWidth       : Number;
 		protected var thisHeight      : Number;
 		protected var stageWidth      : Number;
 		protected var stageHeight     : Number;
+
 		//permitted operation:
 		protected var beScale         : Boolean;
 		protected var beDrag          : Boolean;
@@ -33,7 +33,7 @@
 		protected var beMovieView     : Boolean;
         protected var initialized     : Boolean;
 		protected var isFirstInit     : Boolean;
-		public var isActiveState      : Boolean;
+		public    var isActiveState      : Boolean;
 		protected var stagePressed    : Boolean;
 
 		private var blurValue         : Number;
@@ -52,8 +52,6 @@
 		{
 			posInfo = {"top":top, "right":right, "bottom":bottom, "left":left, "centerU":centeru, "centerV":centerv};
 
-			//preInitialize();
-            //_invalidHash = {};
 			initialize();
 
 			if (stage) { addedToStage(null); }
@@ -61,18 +59,10 @@
 		}
 		protected function initialize()
 		{
-            //_labelHash = UIComponent.generateLabelHash(this);
-
             //Original width determines the width at 100% with original contents.
             //_originalWidth = super.width / super.scaleX;
             //_originalHeight = super.height / super.scaleY;
 
-            //if (_width == 0) { _width = super.width; }
-            //if (_height == 0) { _height = super.height; }
-
-            //invalidate();
-
-			//sceneManager  = new WidgetController();
 			thisWidth     = this.width;
 			thisHeight    = this.height;
 
@@ -113,13 +103,6 @@
 		protected function addedToStage(evt:Event = null) : void
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, addedToStage, false);
-
-            //if ( !CLIK.initialized ) {
-                //CLIK.initialize(stage, this);
-            //}
-            //if ( _enableInitCallback && Extensions.CLIK_addedToStageCallback != null ) {
-                //CLIK.queueInitCallback(this);
-            //}
 
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.align     = StageAlign.TOP_LEFT;
@@ -227,8 +210,6 @@
 			this.y < this.height / 2               ? this.y = this.height / 2                 : this.y;
 		}
 
-
-
 		protected function firstFrame()
 		{
 			this.stop();
@@ -321,7 +302,7 @@
 
 		private function setInactiveState()
 		{
-			//trace(":::::::::::::" + "beBlurFilter:" + beBlurFilter + "/" + "beScale:" + beScale);
+			//trace("beBlurFilter:" + beBlurFilter + "/" + "beScale:" + beScale);
 			var _z:int;
 			if (!beScale)         { _z = 0; }
 			else
@@ -424,14 +405,13 @@
 		////////////////////////////////////////////////////////////////////////////
 		private function calcRotations():void
 		{
-			var rotX:Number = orx + ((root.mouseX- ox) / 1024) * 90;
+			var rotX:Number = orx + ((root.mouseX - ox) / 1024) * 90;
 			var rotY:Number = ory + ((root.mouseY - oy) / 1024) * 90;
 
 			panel.rotationY = -rotX;
 			panel.rotationX = rotY;
 		}
 
-		//additional code by loywong
 		private function stageDrag(bool:Boolean) : void
 		{
 			stagePressed = bool;

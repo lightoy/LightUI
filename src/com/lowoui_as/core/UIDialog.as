@@ -29,10 +29,14 @@
 		{
 			super(top, right, bottom, left, centeru, centerv);
 		}
+
 		override protected function initialize()
 		{
 			super.initialize();
+
+			//setting ----------------
 			//beDrag = true;
+			//------------------------
 
 			dialogCon = this;
 			darkBgCon = this.parent["darkBg"];
@@ -44,16 +48,12 @@
 
 			if (dialogCon["btnYes"] != null)
 			{
-				//dialogCon["btnYes"]["tt"].text = "OK";
 				dialogCon["btnYes"].setName("YES");
-				//dialogCon["btnYes"].setSize(100,24);
 				dialogCon["btnYes"].addEventListener(MouseEvent.CLICK, onBtn);
 			}
 			if (dialogCon["btnNo"] != null)
 			{
-				//dialogCon["btnNo"]["tt"].text = "No";
 				dialogCon["btnNo"].setName("NO");
-				//dialogCon["btnNo"].setSize(100,24);
 				dialogCon["btnNo"].addEventListener(MouseEvent.CLICK, onBtn);
 			}
 
@@ -66,8 +66,10 @@
 			{
 				case "btnYes":
 					callUS(a2u_yesFun);
+
+					//Test
 					//if(Extensions.isGFxPlayer)
-					//{ yesCallFun(); }
+					//SceneManager.ins.LoadScene("SelectCharacter");
 					break;
 				case "btnNo":
 					callUS(a2u_noFun);
@@ -78,26 +80,9 @@
 			closeDialog();
 		}
 
-		//test
-		private function yesCallFun()
-		{
-			SceneManager.ins.LoadScene("SelectCharacter");
-		}
-
 		protected function callUS(type:String) : void
 		{
 			ExternalInterface.call(type);
-
-			/*switch (type)
-			{
-				case "Yes":
-					ExternalInterface.call("Yes");
-					break;
-				case "No":
-					ExternalInterface.call("");
-					break;
-				default:
-			}*/
 		}
 
 		private function openDialog()
@@ -116,8 +101,7 @@
 
 			dialogCon["bg"].gotoAndPlay("movie_in");
 
-			//when this be laoded
-			//play stage movie
+			//when this be laoded, play stage movie
 			WidgetManager.inactiveWidgetView();
 		}
 
@@ -140,13 +124,14 @@
 		override public function resetPos(posInfo:Object) : void
 		{
 			super.resetPos(posInfo);
-			darkBgCon.width = stageWidth;
-			darkBgCon.height = stageHeight;
-			darkBgCon.x =  stageWidth / 2;
-			darkBgCon.y =  stageHeight / 2;
+
+			darkBgCon.width   = stageWidth;
+			darkBgCon.height  = stageHeight;
+			darkBgCon.x       = stageWidth / 2;
+			darkBgCon.y       = stageHeight / 2;
 
 			this["bg"].height = stageHeight;
-			this["bg"].x = this["bg"].y = 0;
+			this["bg"].x      = this["bg"].y = 0;
 		}
 	}
 }
