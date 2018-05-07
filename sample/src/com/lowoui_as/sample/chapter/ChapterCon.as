@@ -54,7 +54,7 @@
 			__btnPrev           = this["btnPrev"];
 			__btnNext           = this["btnNext"];
 
-			for (var j:int = 0; j < 6; j++)
+			for (var j:int = 0; j < maxCharpter; j++)
 			{ charpterIndicatorArr.push(this["c" + (j + 1)]); }
 
 			charpterIndicatorArr[1].gotoAndStop(2);

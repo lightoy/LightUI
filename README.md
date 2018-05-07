@@ -12,4 +12,4 @@ It created for making user interfaces with rich animation performence for the ga
     - config
     - setting
 - **Smaple**
-    - entry : the container of all swfs and customize all interfaces for external call.
+    - manager : the container of all swfs and customize all interfaces for external call.

@@ -17,7 +17,7 @@
 		//setting
 		private const scale:Number = 330/400;
 
-		public var _isDrag:Boolean;
+		private var _isDrag:Boolean;
 
 		private var __charpterDetailCon:MovieClip;
 

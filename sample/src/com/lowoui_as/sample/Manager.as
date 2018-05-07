@@ -8,21 +8,20 @@
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 
-	public class Entry extends EntryBase
+	public class Manager extends EntryBase
 	{
 		private var __testBtns1:Object;
 		private var __testBtns2:Object;
 
 		public var isGameOptionShow:Boolean;
 
-		public function Entry()
+		public function Manager()
 		{
 			super();
 
 			if(Global.isTestMode)
 				addTestButtons();
 
-			//add listeners for game options
 			this.addEventListener("gameSettings", onGameSettings);
 			this.addEventListener("prevScene", onPrevScene);
 			this.addEventListener("quitGame", onQuitGame);
